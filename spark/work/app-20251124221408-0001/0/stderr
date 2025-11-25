@@ -1,0 +1,182 @@
+Spark Executor Command: "/usr/lib/jvm/java-17-openjdk-amd64/bin/java" "-cp" "/home/kalp/spark/spark/conf/:/home/kalp/spark/spark/jars/*" "-Xmx1024M" "-Dspark.driver.port=39107" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@172.23.202.231:39107" "--executor-id" "0" "--hostname" "172.23.202.231" "--cores" "16" "--app-id" "app-20251124221408-0001" "--worker-url" "spark://Worker@172.23.202.231:43633" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/11/24 22:14:09 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 14072@Kalp-PC
+25/11/24 22:14:09 INFO SignalUtils: Registering signal handler for TERM
+25/11/24 22:14:09 INFO SignalUtils: Registering signal handler for HUP
+25/11/24 22:14:09 INFO SignalUtils: Registering signal handler for INT
+25/11/24 22:14:09 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/11/24 22:14:09 INFO SecurityManager: Changing view acls to: kalp
+25/11/24 22:14:09 INFO SecurityManager: Changing modify acls to: kalp
+25/11/24 22:14:09 INFO SecurityManager: Changing view acls groups to: 
+25/11/24 22:14:09 INFO SecurityManager: Changing modify acls groups to: 
+25/11/24 22:14:09 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: kalp; groups with view permissions: EMPTY; users with modify permissions: kalp; groups with modify permissions: EMPTY
+25/11/24 22:14:09 INFO TransportClientFactory: Successfully created connection to /172.23.202.231:39107 after 38 ms (0 ms spent in bootstraps)
+25/11/24 22:14:09 INFO SecurityManager: Changing view acls to: kalp
+25/11/24 22:14:09 INFO SecurityManager: Changing modify acls to: kalp
+25/11/24 22:14:09 INFO SecurityManager: Changing view acls groups to: 
+25/11/24 22:14:09 INFO SecurityManager: Changing modify acls groups to: 
+25/11/24 22:14:09 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: kalp; groups with view permissions: EMPTY; users with modify permissions: kalp; groups with modify permissions: EMPTY
+25/11/24 22:14:09 INFO TransportClientFactory: Successfully created connection to /172.23.202.231:39107 after 2 ms (0 ms spent in bootstraps)
+25/11/24 22:14:09 INFO DiskBlockManager: Created local directory at /tmp/spark-e29558fb-bc24-4131-bcb5-81da9eb76f89/executor-ce87800c-8b23-4c5a-b257-55957899ef8b/blockmgr-9a958814-87b2-4e65-b748-ec54fd63b324
+25/11/24 22:14:09 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+25/11/24 22:14:10 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@172.23.202.231:39107
+25/11/24 22:14:10 INFO WorkerWatcher: Connecting to worker spark://Worker@172.23.202.231:43633
+25/11/24 22:14:10 INFO TransportClientFactory: Successfully created connection to /172.23.202.231:43633 after 3 ms (0 ms spent in bootstraps)
+25/11/24 22:14:10 INFO ResourceUtils: ==============================================================
+25/11/24 22:14:10 INFO ResourceUtils: No custom resources configured for spark.executor.
+25/11/24 22:14:10 INFO ResourceUtils: ==============================================================
+25/11/24 22:14:10 INFO WorkerWatcher: Successfully connected to spark://Worker@172.23.202.231:43633
+25/11/24 22:14:10 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+25/11/24 22:14:10 INFO Executor: Starting executor ID 0 on host 172.23.202.231
+25/11/24 22:14:10 INFO Executor: OS info Linux, 6.6.87.2-microsoft-standard-WSL2, amd64
+25/11/24 22:14:10 INFO Executor: Java version 17.0.17
+25/11/24 22:14:10 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37959.
+25/11/24 22:14:10 INFO NettyBlockTransferService: Server created on 172.23.202.231:37959
+25/11/24 22:14:10 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/11/24 22:14:10 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 172.23.202.231, 37959, None)
+25/11/24 22:14:10 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 172.23.202.231, 37959, None)
+25/11/24 22:14:10 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 172.23.202.231, 37959, None)
+25/11/24 22:14:10 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/11/24 22:14:10 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@17e743f8 for default.
+25/11/24 22:14:10 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+25/11/24 22:14:10 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+25/11/24 22:14:10 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 22:14:10 INFO TransportClientFactory: Successfully created connection to /172.23.202.231:42457 after 3 ms (0 ms spent in bootstraps)
+25/11/24 22:14:10 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 4.7 KiB, free 434.4 MiB)
+25/11/24 22:14:10 INFO TorrentBroadcast: Reading broadcast variable 1 took 93 ms
+25/11/24 22:14:10 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 7.8 KiB, free 434.4 MiB)
+25/11/24 22:14:10 INFO HadoopRDD: Input split: file:/home/kalp/spam_project/model_spam/metadata/part-00000:0+324
+25/11/24 22:14:10 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 22:14:10 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 32.6 KiB, free 434.4 MiB)
+25/11/24 22:14:10 INFO TorrentBroadcast: Reading broadcast variable 0 took 13 ms
+25/11/24 22:14:10 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 367.5 KiB, free 434.0 MiB)
+25/11/24 22:14:10 ERROR Executor: Exception in task 0.0 in stage 0.0 (TID 0)
+java.io.IOException: Cannot run program "/home/kalp/venv310/bin/python": error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at org.apache.spark.api.python.PythonWorkerFactory.startDaemon(PythonWorkerFactory.scala:239)
+	at org.apache.spark.api.python.PythonWorkerFactory.createThroughDaemon(PythonWorkerFactory.scala:139)
+	at org.apache.spark.api.python.PythonWorkerFactory.create(PythonWorkerFactory.scala:107)
+	at org.apache.spark.SparkEnv.createPythonWorker(SparkEnv.scala:124)
+	at org.apache.spark.api.python.BasePythonRunner.compute(PythonRunner.scala:174)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:67)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:314)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:244)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	... 20 more
+25/11/24 22:14:10 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+25/11/24 22:14:10 INFO Executor: Running task 0.1 in stage 0.0 (TID 1)
+25/11/24 22:14:10 INFO HadoopRDD: Input split: file:/home/kalp/spam_project/model_spam/metadata/part-00000:0+324
+25/11/24 22:14:10 ERROR Executor: Exception in task 0.1 in stage 0.0 (TID 1)
+java.io.IOException: Cannot run program "/home/kalp/venv310/bin/python": error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at org.apache.spark.api.python.PythonWorkerFactory.startDaemon(PythonWorkerFactory.scala:239)
+	at org.apache.spark.api.python.PythonWorkerFactory.createThroughDaemon(PythonWorkerFactory.scala:139)
+	at org.apache.spark.api.python.PythonWorkerFactory.create(PythonWorkerFactory.scala:107)
+	at org.apache.spark.SparkEnv.createPythonWorker(SparkEnv.scala:124)
+	at org.apache.spark.api.python.BasePythonRunner.compute(PythonRunner.scala:174)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:67)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:314)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:244)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	... 20 more
+25/11/24 22:14:10 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+25/11/24 22:14:10 INFO Executor: Running task 0.2 in stage 0.0 (TID 2)
+25/11/24 22:14:10 INFO HadoopRDD: Input split: file:/home/kalp/spam_project/model_spam/metadata/part-00000:0+324
+25/11/24 22:14:10 ERROR Executor: Exception in task 0.2 in stage 0.0 (TID 2)
+java.io.IOException: Cannot run program "/home/kalp/venv310/bin/python": error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at org.apache.spark.api.python.PythonWorkerFactory.startDaemon(PythonWorkerFactory.scala:239)
+	at org.apache.spark.api.python.PythonWorkerFactory.createThroughDaemon(PythonWorkerFactory.scala:139)
+	at org.apache.spark.api.python.PythonWorkerFactory.create(PythonWorkerFactory.scala:107)
+	at org.apache.spark.SparkEnv.createPythonWorker(SparkEnv.scala:124)
+	at org.apache.spark.api.python.BasePythonRunner.compute(PythonRunner.scala:174)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:67)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:314)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:244)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	... 20 more
+25/11/24 22:14:10 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+25/11/24 22:14:10 INFO Executor: Running task 0.3 in stage 0.0 (TID 3)
+25/11/24 22:14:10 INFO HadoopRDD: Input split: file:/home/kalp/spam_project/model_spam/metadata/part-00000:0+324
+25/11/24 22:14:10 ERROR Executor: Exception in task 0.3 in stage 0.0 (TID 3)
+java.io.IOException: Cannot run program "/home/kalp/venv310/bin/python": error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at org.apache.spark.api.python.PythonWorkerFactory.startDaemon(PythonWorkerFactory.scala:239)
+	at org.apache.spark.api.python.PythonWorkerFactory.createThroughDaemon(PythonWorkerFactory.scala:139)
+	at org.apache.spark.api.python.PythonWorkerFactory.create(PythonWorkerFactory.scala:107)
+	at org.apache.spark.SparkEnv.createPythonWorker(SparkEnv.scala:124)
+	at org.apache.spark.api.python.BasePythonRunner.compute(PythonRunner.scala:174)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:67)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:314)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:244)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	... 20 more
+25/11/24 22:14:11 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+25/11/24 22:14:11 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown

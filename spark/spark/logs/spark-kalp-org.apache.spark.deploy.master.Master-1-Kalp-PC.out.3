@@ -1,0 +1,486 @@
+Spark Command: /usr/lib/jvm/java-17-openjdk-amd64/bin/java -cp /home/kalp/spark/spark/conf/:/home/kalp/spark/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host 172.23.202.231 --port 7077 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/11/24 21:04:17 INFO Master: Started daemon with process name: 8288@Kalp-PC
+25/11/24 21:04:17 INFO SignalUtils: Registering signal handler for TERM
+25/11/24 21:04:17 INFO SignalUtils: Registering signal handler for HUP
+25/11/24 21:04:17 INFO SignalUtils: Registering signal handler for INT
+25/11/24 21:04:17 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/11/24 21:04:18 INFO SecurityManager: Changing view acls to: kalp
+25/11/24 21:04:18 INFO SecurityManager: Changing modify acls to: kalp
+25/11/24 21:04:18 INFO SecurityManager: Changing view acls groups to: 
+25/11/24 21:04:18 INFO SecurityManager: Changing modify acls groups to: 
+25/11/24 21:04:18 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: kalp; groups with view permissions: EMPTY; users with modify permissions: kalp; groups with modify permissions: EMPTY
+25/11/24 21:04:18 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+25/11/24 21:04:18 INFO Master: Starting Spark master at spark://172.23.202.231:7077
+25/11/24 21:04:18 INFO Master: Running Spark version 3.5.7
+25/11/24 21:04:18 INFO JettyUtils: Start Jetty 172.23.202.231:8080 for MasterUI
+25/11/24 21:04:18 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+25/11/24 21:04:18 INFO MasterWebUI: Bound MasterWebUI to 172.23.202.231, and started at http://172.23.202.231:8080
+25/11/24 21:04:18 INFO Master: I have been elected leader! New state: ALIVE
+25/11/24 21:04:48 INFO Master: Registering worker 172.23.202.231:43633 with 16 cores, 6.4 GiB RAM
+25/11/24 21:30:29 INFO Master: Registering app SpamClassifier_ML
+25/11/24 21:30:29 INFO Master: Registered app SpamClassifier_ML with ID app-20251124213029-0000
+25/11/24 21:30:29 INFO Master: Start scheduling for app app-20251124213029-0000 with rpId: 0
+25/11/24 21:30:29 INFO Master: Launching executor app-20251124213029-0000/0 on worker worker-20251124210447-172.23.202.231-43633
+25/11/24 21:30:30 INFO Master: Start scheduling for app app-20251124213029-0000 with rpId: 0
+25/11/24 21:30:48 INFO Master: Received unregister request from application app-20251124213029-0000
+25/11/24 21:30:48 INFO Master: Removing app app-20251124213029-0000
+25/11/24 21:30:48 INFO Master: 172.23.202.231:44432 got disassociated, removing it.
+25/11/24 21:30:48 INFO Master: 172.23.202.231:35511 got disassociated, removing it.
+25/11/24 21:30:48 WARN Master: Got status update for unknown executor app-20251124213029-0000/0
+25/11/24 21:46:33 ERROR TransportRequestHandler: Error while invoking RpcHandler#receive() on RPC id 6156826442887936048
+java.io.InvalidClassException: org.apache.spark.rpc.netty.RpcEndpointVerifier$CheckExistence; local class incompatible: stream classdesc serialVersionUID = 7789290765573734431, local class serialVersionUID = 5378738997755484868
+	at java.base/java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:597)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2224)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:509)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:467)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:87)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:123)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$2(NettyRpcEnv.scala:299)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:352)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$1(NettyRpcEnv.scala:298)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:298)
+	at org.apache.spark.rpc.netty.RequestMessage$.apply(NettyRpcEnv.scala:646)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.internalReceive(NettyRpcEnv.scala:697)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.receive(NettyRpcEnv.scala:682)
+	at org.apache.spark.network.server.TransportRequestHandler.processRpcRequest(TransportRequestHandler.java:163)
+	at org.apache.spark.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:109)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:140)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:53)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/11/24 21:46:53 ERROR TransportRequestHandler: Error while invoking RpcHandler#receive() on RPC id 6650858745068494520
+java.io.InvalidClassException: org.apache.spark.rpc.netty.RpcEndpointVerifier$CheckExistence; local class incompatible: stream classdesc serialVersionUID = 7789290765573734431, local class serialVersionUID = 5378738997755484868
+	at java.base/java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:597)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2224)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:509)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:467)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:87)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:123)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$2(NettyRpcEnv.scala:299)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:352)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$1(NettyRpcEnv.scala:298)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:298)
+	at org.apache.spark.rpc.netty.RequestMessage$.apply(NettyRpcEnv.scala:646)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.internalReceive(NettyRpcEnv.scala:697)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.receive(NettyRpcEnv.scala:682)
+	at org.apache.spark.network.server.TransportRequestHandler.processRpcRequest(TransportRequestHandler.java:163)
+	at org.apache.spark.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:109)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:140)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:53)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/11/24 21:47:13 ERROR TransportRequestHandler: Error while invoking RpcHandler#receive() on RPC id 8173708956257726587
+java.io.InvalidClassException: org.apache.spark.rpc.netty.RpcEndpointVerifier$CheckExistence; local class incompatible: stream classdesc serialVersionUID = 7789290765573734431, local class serialVersionUID = 5378738997755484868
+	at java.base/java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:597)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2224)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:509)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:467)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:87)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:123)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$2(NettyRpcEnv.scala:299)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:352)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$1(NettyRpcEnv.scala:298)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:298)
+	at org.apache.spark.rpc.netty.RequestMessage$.apply(NettyRpcEnv.scala:646)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.internalReceive(NettyRpcEnv.scala:697)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.receive(NettyRpcEnv.scala:682)
+	at org.apache.spark.network.server.TransportRequestHandler.processRpcRequest(TransportRequestHandler.java:163)
+	at org.apache.spark.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:109)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:140)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:53)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/11/24 21:47:34 WARN TransportChannelHandler: Exception in connection from /172.23.192.1:58010
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/11/24 21:47:34 INFO Master: 172.23.192.1:58010 got disassociated, removing it.
+25/11/24 21:47:57 INFO Master: 172.23.192.1:61440 got disassociated, removing it.
+25/11/24 21:59:04 ERROR TransportRequestHandler: Error while invoking RpcHandler#receive() on RPC id 7804083873875018810
+java.io.InvalidClassException: org.apache.spark.rpc.netty.RpcEndpointVerifier$CheckExistence; local class incompatible: stream classdesc serialVersionUID = 7789290765573734431, local class serialVersionUID = 5378738997755484868
+	at java.base/java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:597)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2224)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:509)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:467)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:87)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:123)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$2(NettyRpcEnv.scala:299)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:352)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$1(NettyRpcEnv.scala:298)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:298)
+	at org.apache.spark.rpc.netty.RequestMessage$.apply(NettyRpcEnv.scala:646)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.internalReceive(NettyRpcEnv.scala:697)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.receive(NettyRpcEnv.scala:682)
+	at org.apache.spark.network.server.TransportRequestHandler.processRpcRequest(TransportRequestHandler.java:163)
+	at org.apache.spark.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:109)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:140)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:53)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/11/24 21:59:24 ERROR TransportRequestHandler: Error while invoking RpcHandler#receive() on RPC id 7650523354448093519
+java.io.InvalidClassException: org.apache.spark.rpc.netty.RpcEndpointVerifier$CheckExistence; local class incompatible: stream classdesc serialVersionUID = 7789290765573734431, local class serialVersionUID = 5378738997755484868
+	at java.base/java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:597)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2224)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:509)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:467)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:87)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:123)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$2(NettyRpcEnv.scala:299)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:352)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$1(NettyRpcEnv.scala:298)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:298)
+	at org.apache.spark.rpc.netty.RequestMessage$.apply(NettyRpcEnv.scala:646)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.internalReceive(NettyRpcEnv.scala:697)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.receive(NettyRpcEnv.scala:682)
+	at org.apache.spark.network.server.TransportRequestHandler.processRpcRequest(TransportRequestHandler.java:163)
+	at org.apache.spark.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:109)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:140)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:53)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/11/24 21:59:44 ERROR TransportRequestHandler: Error while invoking RpcHandler#receive() on RPC id 7220990219280547818
+java.io.InvalidClassException: org.apache.spark.rpc.netty.RpcEndpointVerifier$CheckExistence; local class incompatible: stream classdesc serialVersionUID = 7789290765573734431, local class serialVersionUID = 5378738997755484868
+	at java.base/java.io.ObjectStreamClass.initNonProxy(ObjectStreamClass.java:597)
+	at java.base/java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:2051)
+	at java.base/java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1898)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:2224)
+	at java.base/java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1733)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:509)
+	at java.base/java.io.ObjectInputStream.readObject(ObjectInputStream.java:467)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:87)
+	at org.apache.spark.serializer.JavaSerializerInstance.deserialize(JavaSerializer.scala:123)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$2(NettyRpcEnv.scala:299)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:352)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.$anonfun$deserialize$1(NettyRpcEnv.scala:298)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:59)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.deserialize(NettyRpcEnv.scala:298)
+	at org.apache.spark.rpc.netty.RequestMessage$.apply(NettyRpcEnv.scala:646)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.internalReceive(NettyRpcEnv.scala:697)
+	at org.apache.spark.rpc.netty.NettyRpcHandler.receive(NettyRpcEnv.scala:682)
+	at org.apache.spark.network.server.TransportRequestHandler.processRpcRequest(TransportRequestHandler.java:163)
+	at org.apache.spark.network.server.TransportRequestHandler.handle(TransportRequestHandler.java:109)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:140)
+	at org.apache.spark.network.server.TransportChannelHandler.channelRead0(TransportChannelHandler.java:53)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at org.apache.spark.network.util.TransportFrameDecoder.channelRead(TransportFrameDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/11/24 22:00:04 INFO Master: 172.23.192.1:61439 got disassociated, removing it.
+25/11/24 22:14:08 INFO Master: Registering app SpamPredictionAPI
+25/11/24 22:14:08 INFO Master: Registered app SpamPredictionAPI with ID app-20251124221408-0001
+25/11/24 22:14:08 INFO Master: Start scheduling for app app-20251124221408-0001 with rpId: 0
+25/11/24 22:14:08 INFO Master: Launching executor app-20251124221408-0001/0 on worker worker-20251124210447-172.23.202.231-43633
+25/11/24 22:14:08 INFO Master: Start scheduling for app app-20251124221408-0001 with rpId: 0
+25/11/24 22:14:11 INFO Master: Received unregister request from application app-20251124221408-0001
+25/11/24 22:14:11 INFO Master: Removing app app-20251124221408-0001
+25/11/24 22:14:11 INFO Master: 172.23.202.231:37362 got disassociated, removing it.
+25/11/24 22:14:11 INFO Master: 172.23.202.231:39107 got disassociated, removing it.
+25/11/24 22:14:11 WARN Master: Got status update for unknown executor app-20251124221408-0001/0
+25/11/24 22:15:52 INFO Master: Registering app SpamPredictionAPI
+25/11/24 22:15:52 INFO Master: Registered app SpamPredictionAPI with ID app-20251124221552-0002
+25/11/24 22:15:52 INFO Master: Start scheduling for app app-20251124221552-0002 with rpId: 0
+25/11/24 22:15:52 INFO Master: Launching executor app-20251124221552-0002/0 on worker worker-20251124210447-172.23.202.231-43633
+25/11/24 22:15:52 INFO Master: Start scheduling for app app-20251124221552-0002 with rpId: 0
+25/11/24 22:16:03 INFO Master: Registering app SpamPredictionAPI
+25/11/24 22:16:03 INFO Master: Registered app SpamPredictionAPI with ID app-20251124221603-0003
+25/11/24 22:16:03 INFO Master: Start scheduling for app app-20251124221552-0002 with rpId: 0
+25/11/24 22:16:03 INFO Master: Start scheduling for app app-20251124221603-0003 with rpId: 0
+25/11/24 22:17:46 INFO Master: Removing executor app-20251124221552-0002/0 because it is EXITED
+25/11/24 22:17:46 INFO Master: Start scheduling for app app-20251124221552-0002 with rpId: 0
+25/11/24 22:17:46 INFO Master: Launching executor app-20251124221552-0002/1 on worker worker-20251124210447-172.23.202.231-43633
+25/11/24 22:17:46 INFO Master: Start scheduling for app app-20251124221603-0003 with rpId: 0
+25/11/24 22:17:46 WARN Master: Got status update for unknown executor app-20251124221552-0002/0
+25/11/24 22:17:46 INFO Master: 172.23.202.231:34204 got disassociated, removing it.
+25/11/24 22:17:46 INFO Master: 172.23.202.231:43633 got disassociated, removing it.
+25/11/24 22:17:46 INFO Master: Removing worker worker-20251124210447-172.23.202.231-43633 on 172.23.202.231:43633
+25/11/24 22:17:46 INFO Master: Telling app of lost executor: 1
+25/11/24 22:17:46 INFO Master: Telling app of lost worker: worker-20251124210447-172.23.202.231-43633
+25/11/24 22:17:46 INFO Master: Start scheduling for app app-20251124221552-0002 with rpId: 0
+25/11/24 22:17:46 INFO Master: Start scheduling for app app-20251124221603-0003 with rpId: 0
+25/11/24 22:18:00 INFO Master: Registering worker 172.23.202.231:44191 with 4 cores, 4.0 GiB RAM
+25/11/24 22:18:00 INFO Master: Start scheduling for app app-20251124221552-0002 with rpId: 0
+25/11/24 22:18:00 INFO Master: Launching executor app-20251124221552-0002/2 on worker worker-20251124221759-172.23.202.231-44191
+25/11/24 22:18:00 INFO Master: Start scheduling for app app-20251124221603-0003 with rpId: 0
+25/11/24 22:18:00 INFO Master: Start scheduling for app app-20251124221552-0002 with rpId: 0
+25/11/24 22:18:00 INFO Master: Start scheduling for app app-20251124221603-0003 with rpId: 0
+25/11/24 22:18:22 INFO Master: Received unregister request from application app-20251124221603-0003
+25/11/24 22:18:22 INFO Master: Removing app app-20251124221603-0003
+25/11/24 22:18:22 INFO Master: Start scheduling for app app-20251124221552-0002 with rpId: 0
+25/11/24 22:18:22 INFO Master: 172.23.202.231:34706 got disassociated, removing it.
+25/11/24 22:18:22 INFO Master: 172.23.202.231:42065 got disassociated, removing it.
+25/11/24 22:18:22 INFO Master: Received unregister request from application app-20251124221552-0002
+25/11/24 22:18:22 INFO Master: Removing app app-20251124221552-0002
+25/11/24 22:18:22 INFO Master: 172.23.202.231:52014 got disassociated, removing it.
+25/11/24 22:18:22 INFO Master: 172.23.202.231:35787 got disassociated, removing it.
+25/11/24 22:18:22 WARN Master: Got status update for unknown executor app-20251124221552-0002/2
+25/11/24 22:18:27 INFO Master: Registering app SpamPredictionAPI
+25/11/24 22:18:27 INFO Master: Registered app SpamPredictionAPI with ID app-20251124221827-0004
+25/11/24 22:18:27 INFO Master: Start scheduling for app app-20251124221827-0004 with rpId: 0
+25/11/24 22:18:27 INFO Master: Launching executor app-20251124221827-0004/0 on worker worker-20251124221759-172.23.202.231-44191
+25/11/24 22:18:27 INFO Master: Start scheduling for app app-20251124221827-0004 with rpId: 0
+25/11/24 22:18:37 INFO Master: Registering app SpamPredictionAPI
+25/11/24 22:18:37 INFO Master: Registered app SpamPredictionAPI with ID app-20251124221837-0005
+25/11/24 22:18:37 INFO Master: Start scheduling for app app-20251124221827-0004 with rpId: 0
+25/11/24 22:18:37 INFO Master: Start scheduling for app app-20251124221837-0005 with rpId: 0
+25/11/24 22:19:41 INFO Master: Removing app app-20251124221837-0005
+25/11/24 22:19:41 INFO Master: Start scheduling for app app-20251124221827-0004 with rpId: 0
+25/11/24 22:19:41 INFO Master: 172.23.202.231:48620 got disassociated, removing it.
+25/11/24 22:19:41 INFO Master: 172.23.202.231:34015 got disassociated, removing it.
+25/11/24 22:19:41 INFO Master: Received unregister request from application app-20251124221827-0004
+25/11/24 22:19:41 INFO Master: Removing app app-20251124221827-0004
+25/11/24 22:19:41 INFO Master: 172.23.202.231:53340 got disassociated, removing it.
+25/11/24 22:19:41 INFO Master: 172.23.202.231:40693 got disassociated, removing it.
+25/11/24 22:19:41 WARN Master: Got status update for unknown executor app-20251124221827-0004/0
+25/11/24 22:20:19 INFO Master: Registering app SpamPredictionAPI
+25/11/24 22:20:19 INFO Master: Registered app SpamPredictionAPI with ID app-20251124222019-0006
+25/11/24 22:20:19 INFO Master: Start scheduling for app app-20251124222019-0006 with rpId: 0
+25/11/24 22:20:19 INFO Master: Launching executor app-20251124222019-0006/0 on worker worker-20251124221759-172.23.202.231-44191
+25/11/24 22:20:19 INFO Master: Start scheduling for app app-20251124222019-0006 with rpId: 0
+25/11/24 22:20:29 INFO Master: Registering app SpamPredictionAPI
+25/11/24 22:20:29 INFO Master: Registered app SpamPredictionAPI with ID app-20251124222029-0007
+25/11/24 22:20:29 INFO Master: Start scheduling for app app-20251124222019-0006 with rpId: 0
+25/11/24 22:20:29 INFO Master: Start scheduling for app app-20251124222029-0007 with rpId: 0
+25/11/24 22:21:24 INFO Master: 172.23.202.231:45114 got disassociated, removing it.
+25/11/24 22:21:24 INFO Master: 172.23.202.231:43191 got disassociated, removing it.
+25/11/24 22:21:24 INFO Master: Removing app app-20251124222029-0007
+25/11/24 22:21:24 INFO Master: Start scheduling for app app-20251124222019-0006 with rpId: 0
+25/11/24 22:21:24 INFO Master: Removing executor app-20251124222019-0006/0 because it is EXITED
+25/11/24 22:21:24 INFO Master: Start scheduling for app app-20251124222019-0006 with rpId: 0
+25/11/24 22:21:24 INFO Master: Launching executor app-20251124222019-0006/1 on worker worker-20251124221759-172.23.202.231-44191
+25/11/24 22:21:24 WARN TransportChannelHandler: Exception in connection from /172.23.202.231:33546
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+25/11/24 22:21:24 INFO Master: 172.23.202.231:33546 got disassociated, removing it.
+25/11/24 22:21:24 INFO Master: 172.23.202.231:33089 got disassociated, removing it.
+25/11/24 22:21:24 INFO Master: Removing app app-20251124222019-0006
+25/11/24 22:21:25 WARN Master: Got status update for unknown executor app-20251124222019-0006/1
+25/11/24 22:21:25 WARN Master: Got status update for unknown executor app-20251124222019-0006/1
+25/11/24 22:21:34 INFO Master: Registering app SpamPredictionAPI
+25/11/24 22:21:34 INFO Master: Registered app SpamPredictionAPI with ID app-20251124222134-0008
+25/11/24 22:21:34 INFO Master: Start scheduling for app app-20251124222134-0008 with rpId: 0
+25/11/24 22:21:34 INFO Master: Launching executor app-20251124222134-0008/0 on worker worker-20251124221759-172.23.202.231-44191
+25/11/24 22:21:34 INFO Master: Start scheduling for app app-20251124222134-0008 with rpId: 0
+25/11/24 22:21:44 INFO Master: Registering app SpamPredictionAPI
+25/11/24 22:21:44 INFO Master: Registered app SpamPredictionAPI with ID app-20251124222144-0009
+25/11/24 22:21:44 INFO Master: Start scheduling for app app-20251124222134-0008 with rpId: 0
+25/11/24 22:21:44 INFO Master: Start scheduling for app app-20251124222144-0009 with rpId: 0
+25/11/24 22:23:32 INFO Master: 172.23.202.231:46514 got disassociated, removing it.
+25/11/24 22:23:32 INFO Master: 172.23.202.231:44191 got disassociated, removing it.
+25/11/24 22:23:32 INFO Master: Removing worker worker-20251124221759-172.23.202.231-44191 on 172.23.202.231:44191
+25/11/24 22:23:32 INFO Master: Telling app of lost executor: 0
+25/11/24 22:23:32 INFO Master: Telling app of lost worker: worker-20251124221759-172.23.202.231-44191
+25/11/24 22:23:32 INFO Master: Start scheduling for app app-20251124222134-0008 with rpId: 0
+25/11/24 22:23:32 INFO Master: Start scheduling for app app-20251124222144-0009 with rpId: 0

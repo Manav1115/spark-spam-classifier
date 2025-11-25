@@ -1,0 +1,1491 @@
+Spark Executor Command: "/usr/lib/jvm/java-17-openjdk-amd64/bin/java" "-cp" "/home/kalp/spark/spark/conf/:/home/kalp/spark/spark/jars/*" "-Xmx1024M" "-Dspark.driver.port=35511" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@172.23.202.231:35511" "--executor-id" "0" "--hostname" "172.23.202.231" "--cores" "16" "--app-id" "app-20251124213029-0000" "--worker-url" "spark://Worker@172.23.202.231:43633" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/11/24 21:30:31 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 11393@Kalp-PC
+25/11/24 21:30:31 INFO SignalUtils: Registering signal handler for TERM
+25/11/24 21:30:31 INFO SignalUtils: Registering signal handler for HUP
+25/11/24 21:30:31 INFO SignalUtils: Registering signal handler for INT
+25/11/24 21:30:31 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/11/24 21:30:31 INFO SecurityManager: Changing view acls to: kalp
+25/11/24 21:30:31 INFO SecurityManager: Changing modify acls to: kalp
+25/11/24 21:30:31 INFO SecurityManager: Changing view acls groups to: 
+25/11/24 21:30:31 INFO SecurityManager: Changing modify acls groups to: 
+25/11/24 21:30:31 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: kalp; groups with view permissions: EMPTY; users with modify permissions: kalp; groups with modify permissions: EMPTY
+25/11/24 21:30:31 INFO TransportClientFactory: Successfully created connection to /172.23.202.231:35511 after 61 ms (0 ms spent in bootstraps)
+25/11/24 21:30:31 INFO SecurityManager: Changing view acls to: kalp
+25/11/24 21:30:31 INFO SecurityManager: Changing modify acls to: kalp
+25/11/24 21:30:31 INFO SecurityManager: Changing view acls groups to: 
+25/11/24 21:30:31 INFO SecurityManager: Changing modify acls groups to: 
+25/11/24 21:30:31 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: kalp; groups with view permissions: EMPTY; users with modify permissions: kalp; groups with modify permissions: EMPTY
+25/11/24 21:30:31 INFO TransportClientFactory: Successfully created connection to /172.23.202.231:35511 after 2 ms (0 ms spent in bootstraps)
+25/11/24 21:30:31 INFO DiskBlockManager: Created local directory at /tmp/spark-e29558fb-bc24-4131-bcb5-81da9eb76f89/executor-fd6b48c5-9e94-4b61-9e65-fd660d8ad21f/blockmgr-29a8ef9c-f4cd-42be-bdd3-74f28aee27f6
+25/11/24 21:30:31 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+25/11/24 21:30:32 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@172.23.202.231:35511
+25/11/24 21:30:32 INFO WorkerWatcher: Connecting to worker spark://Worker@172.23.202.231:43633
+25/11/24 21:30:32 INFO TransportClientFactory: Successfully created connection to /172.23.202.231:43633 after 3 ms (0 ms spent in bootstraps)
+25/11/24 21:30:32 INFO ResourceUtils: ==============================================================
+25/11/24 21:30:32 INFO ResourceUtils: No custom resources configured for spark.executor.
+25/11/24 21:30:32 INFO ResourceUtils: ==============================================================
+25/11/24 21:30:32 INFO WorkerWatcher: Successfully connected to spark://Worker@172.23.202.231:43633
+25/11/24 21:30:32 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+25/11/24 21:30:32 INFO Executor: Starting executor ID 0 on host 172.23.202.231
+25/11/24 21:30:32 INFO Executor: OS info Linux, 6.6.87.2-microsoft-standard-WSL2, amd64
+25/11/24 21:30:32 INFO Executor: Java version 17.0.17
+25/11/24 21:30:32 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36585.
+25/11/24 21:30:32 INFO NettyBlockTransferService: Server created on 172.23.202.231:36585
+25/11/24 21:30:32 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/11/24 21:30:32 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 172.23.202.231, 36585, None)
+25/11/24 21:30:32 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 172.23.202.231, 36585, None)
+25/11/24 21:30:32 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 172.23.202.231, 36585, None)
+25/11/24 21:30:32 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/11/24 21:30:32 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@17e743f8 for default.
+25/11/24 21:30:33 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+25/11/24 21:30:33 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+25/11/24 21:30:33 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:34 INFO TransportClientFactory: Successfully created connection to /172.23.202.231:40261 after 3 ms (0 ms spent in bootstraps)
+25/11/24 21:30:34 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.5 KiB, free 434.4 MiB)
+25/11/24 21:30:34 INFO TorrentBroadcast: Reading broadcast variable 1 took 79 ms
+25/11/24 21:30:34 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 13.8 KiB, free 434.4 MiB)
+25/11/24 21:30:34 INFO CodeGenerator: Code generated in 130.602029 ms
+25/11/24 21:30:34 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 0-4194304, partition values: [empty row]
+25/11/24 21:30:34 INFO CodeGenerator: Code generated in 15.388443 ms
+25/11/24 21:30:34 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:34 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 434.3 MiB)
+25/11/24 21:30:34 INFO TorrentBroadcast: Reading broadcast variable 0 took 12 ms
+25/11/24 21:30:34 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 370.9 KiB, free 434.0 MiB)
+25/11/24 21:30:34 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1760 bytes result sent to driver
+25/11/24 21:30:34 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+25/11/24 21:30:34 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+25/11/24 21:30:34 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+25/11/24 21:30:34 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+25/11/24 21:30:34 INFO Executor: Running task 1.0 in stage 1.0 (TID 2)
+25/11/24 21:30:34 INFO Executor: Running task 2.0 in stage 1.0 (TID 3)
+25/11/24 21:30:34 INFO TorrentBroadcast: Started reading broadcast variable 3 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:34 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 9.5 KiB, free 434.0 MiB)
+25/11/24 21:30:34 INFO TorrentBroadcast: Reading broadcast variable 3 took 12 ms
+25/11/24 21:30:34 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 21.1 KiB, free 434.0 MiB)
+25/11/24 21:30:35 INFO CodeGenerator: Code generated in 12.139258 ms
+25/11/24 21:30:35 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 8388608-9634397, partition values: [empty row]
+25/11/24 21:30:35 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 0-4194304, partition values: [empty row]
+25/11/24 21:30:35 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 4194304-8388608, partition values: [empty row]
+25/11/24 21:30:35 INFO TorrentBroadcast: Started reading broadcast variable 2 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:35 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 433.9 MiB)
+25/11/24 21:30:35 INFO TorrentBroadcast: Reading broadcast variable 2 took 11 ms
+25/11/24 21:30:35 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 370.9 KiB, free 433.6 MiB)
+25/11/24 21:30:35 INFO Executor: Finished task 2.0 in stage 1.0 (TID 3). 1841 bytes result sent to driver
+25/11/24 21:30:35 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1798 bytes result sent to driver
+25/11/24 21:30:35 INFO Executor: Finished task 1.0 in stage 1.0 (TID 2). 1798 bytes result sent to driver
+25/11/24 21:30:36 INFO CoarseGrainedExecutorBackend: Got assigned task 4
+25/11/24 21:30:36 INFO Executor: Running task 0.0 in stage 2.0 (TID 4)
+25/11/24 21:30:36 INFO CoarseGrainedExecutorBackend: Got assigned task 5
+25/11/24 21:30:36 INFO CoarseGrainedExecutorBackend: Got assigned task 6
+25/11/24 21:30:36 INFO Executor: Running task 1.0 in stage 2.0 (TID 5)
+25/11/24 21:30:36 INFO Executor: Running task 2.0 in stage 2.0 (TID 6)
+25/11/24 21:30:36 INFO TorrentBroadcast: Started reading broadcast variable 5 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:36 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 8.9 KiB, free 433.6 MiB)
+25/11/24 21:30:36 INFO TorrentBroadcast: Reading broadcast variable 5 took 14 ms
+25/11/24 21:30:36 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 18.5 KiB, free 433.9 MiB)
+25/11/24 21:30:36 INFO CodeGenerator: Code generated in 13.406001 ms
+25/11/24 21:30:36 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 8388608-9634397, partition values: [empty row]
+25/11/24 21:30:36 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 4194304-8388608, partition values: [empty row]
+25/11/24 21:30:36 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 0-4194304, partition values: [empty row]
+25/11/24 21:30:36 INFO CodeGenerator: Code generated in 7.16009 ms
+25/11/24 21:30:36 INFO TorrentBroadcast: Started reading broadcast variable 4 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:36 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 434.3 MiB)
+25/11/24 21:30:36 INFO TorrentBroadcast: Reading broadcast variable 4 took 11 ms
+25/11/24 21:30:36 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 370.9 KiB, free 434.0 MiB)
+25/11/24 21:30:36 INFO Executor: Finished task 2.0 in stage 2.0 (TID 6). 2057 bytes result sent to driver
+25/11/24 21:30:36 INFO Executor: Finished task 1.0 in stage 2.0 (TID 5). 2057 bytes result sent to driver
+25/11/24 21:30:36 INFO Executor: Finished task 0.0 in stage 2.0 (TID 4). 2057 bytes result sent to driver
+25/11/24 21:30:36 INFO CoarseGrainedExecutorBackend: Got assigned task 7
+25/11/24 21:30:36 INFO Executor: Running task 0.0 in stage 4.0 (TID 7)
+25/11/24 21:30:36 INFO MapOutputTrackerWorker: Updating epoch to 1 and clearing cache
+25/11/24 21:30:36 INFO TorrentBroadcast: Started reading broadcast variable 6 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:36 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 6.1 KiB, free 434.0 MiB)
+25/11/24 21:30:36 INFO TorrentBroadcast: Reading broadcast variable 6 took 8 ms
+25/11/24 21:30:36 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 13.1 KiB, free 434.0 MiB)
+25/11/24 21:30:36 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+25/11/24 21:30:36 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@172.23.202.231:35511)
+25/11/24 21:30:36 INFO MapOutputTrackerWorker: Got the map output locations
+25/11/24 21:30:36 INFO ShuffleBlockFetcherIterator: Getting 3 (180.0 B) non-empty blocks including 3 (180.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:36 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 11 ms
+25/11/24 21:30:36 INFO CodeGenerator: Code generated in 15.115189 ms
+25/11/24 21:30:36 INFO Executor: Finished task 0.0 in stage 4.0 (TID 7). 4084 bytes result sent to driver
+25/11/24 21:30:36 INFO CoarseGrainedExecutorBackend: Got assigned task 8
+25/11/24 21:30:36 INFO CoarseGrainedExecutorBackend: Got assigned task 9
+25/11/24 21:30:36 INFO Executor: Running task 0.0 in stage 5.0 (TID 8)
+25/11/24 21:30:36 INFO CoarseGrainedExecutorBackend: Got assigned task 10
+25/11/24 21:30:36 INFO Executor: Running task 1.0 in stage 5.0 (TID 9)
+25/11/24 21:30:36 INFO Executor: Running task 2.0 in stage 5.0 (TID 10)
+25/11/24 21:30:36 INFO TorrentBroadcast: Started reading broadcast variable 8 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:36 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 14.0 KiB, free 433.9 MiB)
+25/11/24 21:30:36 INFO TorrentBroadcast: Reading broadcast variable 8 took 11 ms
+25/11/24 21:30:36 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 30.6 KiB, free 433.9 MiB)
+25/11/24 21:30:36 INFO CodeGenerator: Code generated in 29.684332 ms
+25/11/24 21:30:36 INFO CodeGenerator: Code generated in 19.284751 ms
+25/11/24 21:30:36 INFO CodeGenerator: Code generated in 14.97126 ms
+25/11/24 21:30:36 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 0-4194304, partition values: [empty row]
+25/11/24 21:30:36 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 4194304-8388608, partition values: [empty row]
+25/11/24 21:30:36 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 8388608-9634397, partition values: [empty row]
+25/11/24 21:30:36 INFO CodeGenerator: Code generated in 8.45701 ms
+25/11/24 21:30:36 INFO TorrentBroadcast: Started reading broadcast variable 7 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:36 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 433.7 MiB)
+25/11/24 21:30:36 INFO TorrentBroadcast: Reading broadcast variable 7 took 10 ms
+25/11/24 21:30:37 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 370.9 KiB, free 433.3 MiB)
+25/11/24 21:30:37 INFO Executor: Finished task 2.0 in stage 5.0 (TID 10). 2929 bytes result sent to driver
+25/11/24 21:30:37 INFO Executor: Finished task 1.0 in stage 5.0 (TID 9). 2886 bytes result sent to driver
+25/11/24 21:30:37 INFO Executor: Finished task 0.0 in stage 5.0 (TID 8). 2886 bytes result sent to driver
+25/11/24 21:30:37 INFO CoarseGrainedExecutorBackend: Got assigned task 11
+25/11/24 21:30:37 INFO Executor: Running task 0.0 in stage 7.0 (TID 11)
+25/11/24 21:30:37 INFO MapOutputTrackerWorker: Updating epoch to 2 and clearing cache
+25/11/24 21:30:37 INFO TorrentBroadcast: Started reading broadcast variable 9 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:37 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 6.1 KiB, free 433.9 MiB)
+25/11/24 21:30:37 INFO TorrentBroadcast: Reading broadcast variable 9 took 16 ms
+25/11/24 21:30:37 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 13.1 KiB, free 433.9 MiB)
+25/11/24 21:30:37 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 1, fetching them
+25/11/24 21:30:37 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@172.23.202.231:35511)
+25/11/24 21:30:37 INFO MapOutputTrackerWorker: Got the map output locations
+25/11/24 21:30:37 INFO ShuffleBlockFetcherIterator: Getting 3 (180.0 B) non-empty blocks including 3 (180.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:37 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+25/11/24 21:30:37 INFO Executor: Finished task 0.0 in stage 7.0 (TID 11). 4084 bytes result sent to driver
+25/11/24 21:30:37 INFO CoarseGrainedExecutorBackend: Got assigned task 12
+25/11/24 21:30:37 INFO CoarseGrainedExecutorBackend: Got assigned task 13
+25/11/24 21:30:37 INFO Executor: Running task 0.0 in stage 8.0 (TID 12)
+25/11/24 21:30:37 INFO CoarseGrainedExecutorBackend: Got assigned task 14
+25/11/24 21:30:37 INFO Executor: Running task 1.0 in stage 8.0 (TID 13)
+25/11/24 21:30:37 INFO Executor: Running task 2.0 in stage 8.0 (TID 14)
+25/11/24 21:30:37 INFO TorrentBroadcast: Started reading broadcast variable 11 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:37 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 14.0 KiB, free 434.0 MiB)
+25/11/24 21:30:37 INFO TorrentBroadcast: Reading broadcast variable 11 took 14 ms
+25/11/24 21:30:37 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 30.6 KiB, free 433.9 MiB)
+25/11/24 21:30:37 INFO CodeGenerator: Code generated in 30.822504 ms
+25/11/24 21:30:37 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 8388608-9634397, partition values: [empty row]
+25/11/24 21:30:37 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 0-4194304, partition values: [empty row]
+25/11/24 21:30:37 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 4194304-8388608, partition values: [empty row]
+25/11/24 21:30:37 INFO TorrentBroadcast: Started reading broadcast variable 10 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:37 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 433.7 MiB)
+25/11/24 21:30:37 INFO TorrentBroadcast: Reading broadcast variable 10 took 15 ms
+25/11/24 21:30:37 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 370.9 KiB, free 433.4 MiB)
+25/11/24 21:30:37 INFO Executor: Finished task 2.0 in stage 8.0 (TID 14). 2886 bytes result sent to driver
+25/11/24 21:30:37 INFO Executor: Finished task 1.0 in stage 8.0 (TID 13). 2886 bytes result sent to driver
+25/11/24 21:30:37 INFO Executor: Finished task 0.0 in stage 8.0 (TID 12). 2886 bytes result sent to driver
+25/11/24 21:30:38 INFO CoarseGrainedExecutorBackend: Got assigned task 15
+25/11/24 21:30:38 INFO Executor: Running task 0.0 in stage 10.0 (TID 15)
+25/11/24 21:30:38 INFO MapOutputTrackerWorker: Updating epoch to 3 and clearing cache
+25/11/24 21:30:38 INFO TorrentBroadcast: Started reading broadcast variable 12 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:38 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 6.1 KiB, free 433.5 MiB)
+25/11/24 21:30:38 INFO TorrentBroadcast: Reading broadcast variable 12 took 12 ms
+25/11/24 21:30:38 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 13.1 KiB, free 433.5 MiB)
+25/11/24 21:30:38 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 2, fetching them
+25/11/24 21:30:38 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@172.23.202.231:35511)
+25/11/24 21:30:38 INFO MapOutputTrackerWorker: Got the map output locations
+25/11/24 21:30:38 INFO ShuffleBlockFetcherIterator: Getting 3 (180.0 B) non-empty blocks including 3 (180.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:38 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+25/11/24 21:30:38 INFO Executor: Finished task 0.0 in stage 10.0 (TID 15). 4084 bytes result sent to driver
+25/11/24 21:30:38 INFO CoarseGrainedExecutorBackend: Got assigned task 16
+25/11/24 21:30:38 INFO CoarseGrainedExecutorBackend: Got assigned task 17
+25/11/24 21:30:38 INFO CoarseGrainedExecutorBackend: Got assigned task 18
+25/11/24 21:30:38 INFO Executor: Running task 0.0 in stage 11.0 (TID 16)
+25/11/24 21:30:38 INFO Executor: Running task 1.0 in stage 11.0 (TID 17)
+25/11/24 21:30:38 INFO Executor: Running task 2.0 in stage 11.0 (TID 18)
+25/11/24 21:30:38 INFO TorrentBroadcast: Started reading broadcast variable 14 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:38 INFO MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 21.5 KiB, free 434.0 MiB)
+25/11/24 21:30:38 INFO TorrentBroadcast: Reading broadcast variable 14 took 12 ms
+25/11/24 21:30:38 INFO MemoryStore: Block broadcast_14 stored as values in memory (estimated size 50.5 KiB, free 433.9 MiB)
+25/11/24 21:30:38 INFO CodeGenerator: Code generated in 45.161162 ms
+25/11/24 21:30:38 INFO CodeGenerator: Code generated in 22.487072 ms
+25/11/24 21:30:38 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 0-4194304, partition values: [empty row]
+25/11/24 21:30:38 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 8388608-9634397, partition values: [empty row]
+25/11/24 21:30:38 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 4194304-8388608, partition values: [empty row]
+25/11/24 21:30:38 INFO TorrentBroadcast: Started reading broadcast variable 13 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:38 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 433.7 MiB)
+25/11/24 21:30:38 INFO TorrentBroadcast: Reading broadcast variable 13 took 13 ms
+25/11/24 21:30:38 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 370.9 KiB, free 433.3 MiB)
+25/11/24 21:30:38 INFO CodeGenerator: Code generated in 31.695293 ms
+25/11/24 21:30:38 INFO CodeGenerator: Code generated in 13.115795 ms
+25/11/24 21:30:39 INFO Executor: Finished task 2.0 in stage 11.0 (TID 18). 2227 bytes result sent to driver
+25/11/24 21:30:39 INFO Executor: Finished task 1.0 in stage 11.0 (TID 17). 2227 bytes result sent to driver
+25/11/24 21:30:39 INFO Executor: Finished task 0.0 in stage 11.0 (TID 16). 2227 bytes result sent to driver
+25/11/24 21:30:39 INFO CoarseGrainedExecutorBackend: Got assigned task 19
+25/11/24 21:30:39 INFO Executor: Running task 0.0 in stage 12.0 (TID 19)
+25/11/24 21:30:39 INFO CoarseGrainedExecutorBackend: Got assigned task 20
+25/11/24 21:30:39 INFO Executor: Running task 1.0 in stage 12.0 (TID 20)
+25/11/24 21:30:39 INFO CoarseGrainedExecutorBackend: Got assigned task 21
+25/11/24 21:30:39 INFO Executor: Running task 2.0 in stage 12.0 (TID 21)
+25/11/24 21:30:39 INFO MapOutputTrackerWorker: Updating epoch to 4 and clearing cache
+25/11/24 21:30:39 INFO TorrentBroadcast: Started reading broadcast variable 15 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:39 INFO MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 3.3 KiB, free 433.5 MiB)
+25/11/24 21:30:39 INFO TorrentBroadcast: Reading broadcast variable 15 took 10 ms
+25/11/24 21:30:39 INFO MemoryStore: Block broadcast_15 stored as values in memory (estimated size 6.3 KiB, free 433.5 MiB)
+25/11/24 21:30:39 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 3, fetching them
+25/11/24 21:30:39 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 3, fetching them
+25/11/24 21:30:39 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@172.23.202.231:35511)
+25/11/24 21:30:39 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 3, fetching them
+25/11/24 21:30:39 INFO MapOutputTrackerWorker: Got the map output locations
+25/11/24 21:30:39 INFO ShuffleBlockFetcherIterator: Getting 3 (225.8 KiB) non-empty blocks including 3 (225.8 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:39 INFO ShuffleBlockFetcherIterator: Getting 3 (225.8 KiB) non-empty blocks including 3 (225.8 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+25/11/24 21:30:39 INFO ShuffleBlockFetcherIterator: Getting 3 (216.3 KiB) non-empty blocks including 3 (216.3 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+25/11/24 21:30:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:39 INFO MemoryStore: Block rdd_41_0 stored as values in memory (estimated size 351.6 KiB, free 433.7 MiB)
+25/11/24 21:30:39 INFO MemoryStore: Block rdd_41_2 stored as values in memory (estimated size 340.9 KiB, free 433.3 MiB)
+25/11/24 21:30:39 INFO MemoryStore: Block rdd_41_1 stored as values in memory (estimated size 359.2 KiB, free 433.0 MiB)
+25/11/24 21:30:39 INFO Executor: Finished task 1.0 in stage 12.0 (TID 20). 1836 bytes result sent to driver
+25/11/24 21:30:39 INFO Executor: Finished task 2.0 in stage 12.0 (TID 21). 1836 bytes result sent to driver
+25/11/24 21:30:39 INFO Executor: Finished task 0.0 in stage 12.0 (TID 19). 1836 bytes result sent to driver
+25/11/24 21:30:39 INFO CoarseGrainedExecutorBackend: Got assigned task 22
+25/11/24 21:30:39 INFO Executor: Running task 0.0 in stage 14.0 (TID 22)
+25/11/24 21:30:39 INFO CoarseGrainedExecutorBackend: Got assigned task 23
+25/11/24 21:30:39 INFO Executor: Running task 1.0 in stage 14.0 (TID 23)
+25/11/24 21:30:39 INFO CoarseGrainedExecutorBackend: Got assigned task 24
+25/11/24 21:30:39 INFO Executor: Running task 2.0 in stage 14.0 (TID 24)
+25/11/24 21:30:39 INFO TorrentBroadcast: Started reading broadcast variable 16 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:39 INFO MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 3.8 KiB, free 433.0 MiB)
+25/11/24 21:30:39 INFO TorrentBroadcast: Reading broadcast variable 16 took 11 ms
+25/11/24 21:30:39 INFO MemoryStore: Block broadcast_16 stored as values in memory (estimated size 7.4 KiB, free 433.0 MiB)
+25/11/24 21:30:39 INFO BlockManager: Found block rdd_41_2 locally
+25/11/24 21:30:39 INFO BlockManager: Found block rdd_41_1 locally
+25/11/24 21:30:39 INFO BlockManager: Found block rdd_41_0 locally
+25/11/24 21:30:39 INFO Executor: Finished task 2.0 in stage 14.0 (TID 24). 93416 bytes result sent to driver
+25/11/24 21:30:39 INFO Executor: Finished task 0.0 in stage 14.0 (TID 22). 95827 bytes result sent to driver
+25/11/24 21:30:39 INFO Executor: Finished task 1.0 in stage 14.0 (TID 23). 97594 bytes result sent to driver
+25/11/24 21:30:39 INFO BlockManager: Removing RDD 41
+25/11/24 21:30:40 INFO BlockManager: Removing RDD 41
+25/11/24 21:30:40 INFO CoarseGrainedExecutorBackend: Got assigned task 25
+25/11/24 21:30:40 INFO Executor: Running task 0.0 in stage 15.0 (TID 25)
+25/11/24 21:30:40 INFO CoarseGrainedExecutorBackend: Got assigned task 26
+25/11/24 21:30:40 INFO CoarseGrainedExecutorBackend: Got assigned task 27
+25/11/24 21:30:40 INFO Executor: Running task 1.0 in stage 15.0 (TID 26)
+25/11/24 21:30:40 INFO Executor: Running task 2.0 in stage 15.0 (TID 27)
+25/11/24 21:30:40 INFO TorrentBroadcast: Started reading broadcast variable 19 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:40 INFO MemoryStore: Block broadcast_19_piece0 stored as bytes in memory (estimated size 119.6 KiB, free 434.3 MiB)
+25/11/24 21:30:40 INFO TorrentBroadcast: Reading broadcast variable 19 took 14 ms
+25/11/24 21:30:40 INFO MemoryStore: Block broadcast_19 stored as values in memory (estimated size 187.0 KiB, free 434.1 MiB)
+25/11/24 21:30:40 INFO CodeGenerator: Code generated in 27.690621 ms
+25/11/24 21:30:40 INFO CodeGenerator: Code generated in 8.266028 ms
+25/11/24 21:30:40 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 8388608-9634397, partition values: [empty row]
+25/11/24 21:30:40 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 0-4194304, partition values: [empty row]
+25/11/24 21:30:40 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 4194304-8388608, partition values: [empty row]
+25/11/24 21:30:40 INFO TorrentBroadcast: Started reading broadcast variable 18 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:40 INFO MemoryStore: Block broadcast_18_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 433.9 MiB)
+25/11/24 21:30:40 INFO TorrentBroadcast: Reading broadcast variable 18 took 7 ms
+25/11/24 21:30:40 INFO MemoryStore: Block broadcast_18 stored as values in memory (estimated size 370.9 KiB, free 433.5 MiB)
+25/11/24 21:30:40 INFO TorrentBroadcast: Started reading broadcast variable 17 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:40 INFO MemoryStore: Block broadcast_17_piece0 stored as bytes in memory (estimated size 171.9 KiB, free 428.3 MiB)
+25/11/24 21:30:40 INFO TorrentBroadcast: Reading broadcast variable 17 took 23 ms
+25/11/24 21:30:40 INFO MemoryStore: Block broadcast_17 stored as values in memory (estimated size 1265.7 KiB, free 427.1 MiB)
+25/11/24 21:30:40 INFO CodeGenerator: Code generated in 17.364194 ms
+25/11/24 21:30:41 INFO Executor: Finished task 2.0 in stage 15.0 (TID 27). 109731 bytes result sent to driver
+25/11/24 21:30:41 INFO Executor: Finished task 1.0 in stage 15.0 (TID 26). 109731 bytes result sent to driver
+25/11/24 21:30:41 INFO Executor: Finished task 0.0 in stage 15.0 (TID 25). 109688 bytes result sent to driver
+25/11/24 21:30:42 INFO CoarseGrainedExecutorBackend: Got assigned task 28
+25/11/24 21:30:42 INFO CoarseGrainedExecutorBackend: Got assigned task 29
+25/11/24 21:30:42 INFO Executor: Running task 0.0 in stage 16.0 (TID 28)
+25/11/24 21:30:42 INFO CoarseGrainedExecutorBackend: Got assigned task 30
+25/11/24 21:30:42 INFO Executor: Running task 1.0 in stage 16.0 (TID 29)
+25/11/24 21:30:42 INFO Executor: Running task 2.0 in stage 16.0 (TID 30)
+25/11/24 21:30:42 INFO TorrentBroadcast: Started reading broadcast variable 22 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:42 INFO MemoryStore: Block broadcast_22_piece0 stored as bytes in memory (estimated size 174.1 KiB, free 432.8 MiB)
+25/11/24 21:30:42 INFO TorrentBroadcast: Reading broadcast variable 22 took 5 ms
+25/11/24 21:30:42 INFO MemoryStore: Block broadcast_22 stored as values in memory (estimated size 427.3 KiB, free 432.4 MiB)
+25/11/24 21:30:42 INFO CodeGenerator: Code generated in 38.235815 ms
+25/11/24 21:30:42 INFO CodeGenerator: Code generated in 8.934096 ms
+25/11/24 21:30:42 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 8388608-9634397, partition values: [empty row]
+25/11/24 21:30:42 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 4194304-8388608, partition values: [empty row]
+25/11/24 21:30:42 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 0-4194304, partition values: [empty row]
+25/11/24 21:30:42 INFO TorrentBroadcast: Started reading broadcast variable 21 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:42 INFO MemoryStore: Block broadcast_21_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 432.2 MiB)
+25/11/24 21:30:42 INFO TorrentBroadcast: Reading broadcast variable 21 took 8 ms
+25/11/24 21:30:42 INFO MemoryStore: Block broadcast_21 stored as values in memory (estimated size 370.9 KiB, free 431.8 MiB)
+25/11/24 21:30:42 INFO CodeGenerator: Code generated in 15.933387 ms
+25/11/24 21:30:42 INFO Executor: Finished task 2.0 in stage 16.0 (TID 30). 326214 bytes result sent to driver
+25/11/24 21:30:42 INFO Executor: Finished task 1.0 in stage 16.0 (TID 29). 326214 bytes result sent to driver
+25/11/24 21:30:42 INFO Executor: Finished task 0.0 in stage 16.0 (TID 28). 326211 bytes result sent to driver
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 31
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 32
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 33
+25/11/24 21:30:43 INFO Executor: Running task 1.0 in stage 17.0 (TID 32)
+25/11/24 21:30:43 INFO Executor: Running task 0.0 in stage 17.0 (TID 31)
+25/11/24 21:30:43 INFO Executor: Running task 2.0 in stage 17.0 (TID 33)
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 26 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_26_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 432.4 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 26 took 6 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_26 stored as values in memory (estimated size 427.8 KiB, free 432.0 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 23 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_23_piece0 stored as bytes in memory (estimated size 33.6 KiB, free 431.8 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 23 took 10 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_23 stored as values in memory (estimated size 104.5 KiB, free 431.7 MiB)
+25/11/24 21:30:43 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 0-4194304, partition values: [empty row]
+25/11/24 21:30:43 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 8388608-9634397, partition values: [empty row]
+25/11/24 21:30:43 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 4194304-8388608, partition values: [empty row]
+25/11/24 21:30:43 INFO MemoryStore: Block rdd_66_2 stored as values in memory (estimated size 62.2 KiB, free 427.7 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 25 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_25_piece0 stored as bytes in memory (estimated size 668.0 B, free 427.7 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 25 took 10 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_25 stored as values in memory (estimated size 104.5 KiB, free 427.6 MiB)
+25/11/24 21:30:43 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+25/11/24 21:30:43 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.VectorBLAS
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 24 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_24_piece0 stored as bytes in memory (estimated size 32.1 KiB, free 427.6 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 24 took 12 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_24 stored as values in memory (estimated size 104.5 KiB, free 427.5 MiB)
+25/11/24 21:30:43 INFO Executor: Finished task 2.0 in stage 17.0 (TID 33). 110477 bytes result sent to driver
+25/11/24 21:30:43 INFO MemoryStore: Block rdd_66_1 stored as values in memory (estimated size 579.2 KiB, free 429.0 MiB)
+25/11/24 21:30:43 INFO Executor: Finished task 1.0 in stage 17.0 (TID 32). 110434 bytes result sent to driver
+25/11/24 21:30:43 INFO MemoryStore: Block rdd_66_0 stored as values in memory (estimated size 1278.5 KiB, free 429.8 MiB)
+25/11/24 21:30:43 INFO Executor: Finished task 0.0 in stage 17.0 (TID 31). 110434 bytes result sent to driver
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 34
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 35
+25/11/24 21:30:43 INFO Executor: Running task 0.0 in stage 18.0 (TID 34)
+25/11/24 21:30:43 INFO Executor: Running task 1.0 in stage 18.0 (TID 35)
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 36
+25/11/24 21:30:43 INFO Executor: Running task 2.0 in stage 18.0 (TID 36)
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 28 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_28_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 430.3 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 28 took 8 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_28 stored as values in memory (estimated size 427.8 KiB, free 429.9 MiB)
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 27 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_27_piece0 stored as bytes in memory (estimated size 46.7 KiB, free 429.8 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 27 took 8 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_27 stored as values in memory (estimated size 104.5 KiB, free 429.7 MiB)
+25/11/24 21:30:43 INFO Executor: Finished task 2.0 in stage 18.0 (TID 36). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 1.0 in stage 18.0 (TID 35). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 0.0 in stage 18.0 (TID 34). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 37
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 38
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 39
+25/11/24 21:30:43 INFO Executor: Running task 0.0 in stage 19.0 (TID 37)
+25/11/24 21:30:43 INFO Executor: Running task 1.0 in stage 19.0 (TID 38)
+25/11/24 21:30:43 INFO Executor: Running task 2.0 in stage 19.0 (TID 39)
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 30 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_30_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 429.7 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 30 took 7 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_30 stored as values in memory (estimated size 427.8 KiB, free 429.3 MiB)
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 29 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_29_piece0 stored as bytes in memory (estimated size 92.6 KiB, free 429.2 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 29 took 9 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_29 stored as values in memory (estimated size 104.5 KiB, free 429.1 MiB)
+25/11/24 21:30:43 INFO Executor: Finished task 2.0 in stage 19.0 (TID 39). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 1.0 in stage 19.0 (TID 38). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 0.0 in stage 19.0 (TID 37). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 40
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 41
+25/11/24 21:30:43 INFO Executor: Running task 0.0 in stage 20.0 (TID 40)
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 42
+25/11/24 21:30:43 INFO Executor: Running task 1.0 in stage 20.0 (TID 41)
+25/11/24 21:30:43 INFO Executor: Running task 2.0 in stage 20.0 (TID 42)
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 32 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_32_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 429.1 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 32 took 7 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_32 stored as values in memory (estimated size 427.8 KiB, free 428.7 MiB)
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 31 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_31_piece0 stored as bytes in memory (estimated size 92.6 KiB, free 428.6 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 31 took 10 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_31 stored as values in memory (estimated size 104.5 KiB, free 428.5 MiB)
+25/11/24 21:30:43 INFO Executor: Finished task 1.0 in stage 20.0 (TID 41). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 0.0 in stage 20.0 (TID 40). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 2.0 in stage 20.0 (TID 42). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 43
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 44
+25/11/24 21:30:43 INFO Executor: Running task 0.0 in stage 21.0 (TID 43)
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 45
+25/11/24 21:30:43 INFO Executor: Running task 2.0 in stage 21.0 (TID 45)
+25/11/24 21:30:43 INFO Executor: Running task 1.0 in stage 21.0 (TID 44)
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 34 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_34_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 428.5 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 34 took 8 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_34 stored as values in memory (estimated size 427.8 KiB, free 428.1 MiB)
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 33 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_33_piece0 stored as bytes in memory (estimated size 92.8 KiB, free 428.0 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 33 took 7 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_33 stored as values in memory (estimated size 104.5 KiB, free 427.9 MiB)
+25/11/24 21:30:43 INFO Executor: Finished task 1.0 in stage 21.0 (TID 44). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 2.0 in stage 21.0 (TID 45). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 0.0 in stage 21.0 (TID 43). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 46
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 47
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 48
+25/11/24 21:30:43 INFO Executor: Running task 0.0 in stage 22.0 (TID 46)
+25/11/24 21:30:43 INFO Executor: Running task 1.0 in stage 22.0 (TID 47)
+25/11/24 21:30:43 INFO Executor: Running task 2.0 in stage 22.0 (TID 48)
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 36 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_36_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 427.9 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 36 took 7 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_36 stored as values in memory (estimated size 427.8 KiB, free 427.5 MiB)
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 35 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_35_piece0 stored as bytes in memory (estimated size 92.7 KiB, free 427.4 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 35 took 9 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_35 stored as values in memory (estimated size 104.5 KiB, free 427.3 MiB)
+25/11/24 21:30:43 INFO Executor: Finished task 1.0 in stage 22.0 (TID 47). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 2.0 in stage 22.0 (TID 48). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 0.0 in stage 22.0 (TID 46). 110391 bytes result sent to driver
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 49
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 50
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 51
+25/11/24 21:30:43 INFO Executor: Running task 1.0 in stage 23.0 (TID 50)
+25/11/24 21:30:43 INFO Executor: Running task 0.0 in stage 23.0 (TID 49)
+25/11/24 21:30:43 INFO Executor: Running task 2.0 in stage 23.0 (TID 51)
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 38 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_38_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 427.3 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 38 took 7 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_38 stored as values in memory (estimated size 427.8 KiB, free 426.9 MiB)
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 37 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_37_piece0 stored as bytes in memory (estimated size 92.8 KiB, free 426.8 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 37 took 7 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_37 stored as values in memory (estimated size 104.5 KiB, free 426.7 MiB)
+25/11/24 21:30:43 INFO Executor: Finished task 0.0 in stage 23.0 (TID 49). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 2.0 in stage 23.0 (TID 51). 110391 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 1.0 in stage 23.0 (TID 50). 110391 bytes result sent to driver
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 52
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 53
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 54
+25/11/24 21:30:43 INFO Executor: Running task 0.0 in stage 24.0 (TID 52)
+25/11/24 21:30:43 INFO Executor: Running task 1.0 in stage 24.0 (TID 53)
+25/11/24 21:30:43 INFO Executor: Running task 2.0 in stage 24.0 (TID 54)
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 40 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_40_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 426.8 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 40 took 6 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_40 stored as values in memory (estimated size 427.8 KiB, free 426.3 MiB)
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 39 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_39_piece0 stored as bytes in memory (estimated size 92.8 KiB, free 426.3 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 39 took 7 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_39 stored as values in memory (estimated size 104.5 KiB, free 426.1 MiB)
+25/11/24 21:30:43 INFO Executor: Finished task 0.0 in stage 24.0 (TID 52). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 2.0 in stage 24.0 (TID 54). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 1.0 in stage 24.0 (TID 53). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 55
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 56
+25/11/24 21:30:43 INFO CoarseGrainedExecutorBackend: Got assigned task 57
+25/11/24 21:30:43 INFO Executor: Running task 0.0 in stage 25.0 (TID 55)
+25/11/24 21:30:43 INFO Executor: Running task 1.0 in stage 25.0 (TID 56)
+25/11/24 21:30:43 INFO Executor: Running task 2.0 in stage 25.0 (TID 57)
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 42 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_42_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 426.2 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 42 took 5 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_42 stored as values in memory (estimated size 427.8 KiB, free 425.8 MiB)
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:43 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:43 INFO TorrentBroadcast: Started reading broadcast variable 41 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_41_piece0 stored as bytes in memory (estimated size 92.8 KiB, free 425.7 MiB)
+25/11/24 21:30:43 INFO TorrentBroadcast: Reading broadcast variable 41 took 5 ms
+25/11/24 21:30:43 INFO MemoryStore: Block broadcast_41 stored as values in memory (estimated size 104.5 KiB, free 425.6 MiB)
+25/11/24 21:30:43 INFO Executor: Finished task 0.0 in stage 25.0 (TID 55). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 1.0 in stage 25.0 (TID 56). 110348 bytes result sent to driver
+25/11/24 21:30:43 INFO Executor: Finished task 2.0 in stage 25.0 (TID 57). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 58
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 59
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 60
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 26.0 (TID 58)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 26.0 (TID 60)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 26.0 (TID 59)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 44 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_44_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 426.8 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 44 took 9 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_44 stored as values in memory (estimated size 427.8 KiB, free 426.9 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 43 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_43_piece0 stored as bytes in memory (estimated size 92.8 KiB, free 428.0 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 43 took 7 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_43 stored as values in memory (estimated size 104.5 KiB, free 427.9 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 26.0 (TID 59). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 26.0 (TID 60). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 26.0 (TID 58). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 61
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 62
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 63
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 27.0 (TID 62)
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 27.0 (TID 61)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 27.0 (TID 63)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 46 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_46_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 429.7 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 46 took 5 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_46 stored as values in memory (estimated size 427.8 KiB, free 429.3 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 45 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_45_piece0 stored as bytes in memory (estimated size 92.8 KiB, free 429.2 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 45 took 7 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_45 stored as values in memory (estimated size 104.5 KiB, free 429.1 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 27.0 (TID 63). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 27.0 (TID 62). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 27.0 (TID 61). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 64
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 65
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 66
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 28.0 (TID 64)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 28.0 (TID 65)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 28.0 (TID 66)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 48 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_48_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 429.1 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 48 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_48 stored as values in memory (estimated size 427.8 KiB, free 428.7 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 47 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_47_piece0 stored as bytes in memory (estimated size 92.8 KiB, free 428.6 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 47 took 8 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_47 stored as values in memory (estimated size 104.5 KiB, free 428.5 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 28.0 (TID 64). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 28.0 (TID 65). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 28.0 (TID 66). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 67
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 68
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 69
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 29.0 (TID 67)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 29.0 (TID 68)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 29.0 (TID 69)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 50 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_50_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 428.5 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 50 took 5 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_50 stored as values in memory (estimated size 427.8 KiB, free 428.1 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 49 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_49_piece0 stored as bytes in memory (estimated size 92.9 KiB, free 428.0 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 49 took 7 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_49 stored as values in memory (estimated size 104.5 KiB, free 427.9 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 29.0 (TID 67). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 29.0 (TID 68). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 29.0 (TID 69). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 70
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 71
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 72
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 30.0 (TID 70)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 30.0 (TID 71)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 30.0 (TID 72)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 52 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_52_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 427.9 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 52 took 5 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_52 stored as values in memory (estimated size 427.8 KiB, free 427.5 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 51 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_51_piece0 stored as bytes in memory (estimated size 92.8 KiB, free 427.4 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 51 took 5 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_51 stored as values in memory (estimated size 104.5 KiB, free 427.3 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 30.0 (TID 71). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 30.0 (TID 72). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 30.0 (TID 70). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 73
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 74
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 75
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 31.0 (TID 73)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 31.0 (TID 74)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 31.0 (TID 75)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 54 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_54_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 427.3 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 54 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_54 stored as values in memory (estimated size 427.8 KiB, free 426.9 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 53 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_53_piece0 stored as bytes in memory (estimated size 92.9 KiB, free 426.8 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 53 took 5 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_53 stored as values in memory (estimated size 104.5 KiB, free 426.7 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 31.0 (TID 74). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 31.0 (TID 75). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 31.0 (TID 73). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 76
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 77
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 78
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 32.0 (TID 76)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 32.0 (TID 78)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 32.0 (TID 77)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 56 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_56_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 426.8 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 56 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_56 stored as values in memory (estimated size 427.8 KiB, free 426.3 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 55 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_55_piece0 stored as bytes in memory (estimated size 92.9 KiB, free 426.3 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 55 took 5 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_55 stored as values in memory (estimated size 104.5 KiB, free 426.1 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 32.0 (TID 78). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 32.0 (TID 76). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 32.0 (TID 77). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 79
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 80
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 81
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 33.0 (TID 79)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 33.0 (TID 81)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 33.0 (TID 80)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 58 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_58_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 426.2 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 58 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_58 stored as values in memory (estimated size 427.8 KiB, free 425.8 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 57 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_57_piece0 stored as bytes in memory (estimated size 92.9 KiB, free 425.7 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 57 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_57 stored as values in memory (estimated size 104.5 KiB, free 425.6 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 33.0 (TID 79). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 33.0 (TID 80). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 33.0 (TID 81). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 82
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 83
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 34.0 (TID 82)
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 84
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 34.0 (TID 83)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 34.0 (TID 84)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 60 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_60_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 426.2 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 60 took 5 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_60 stored as values in memory (estimated size 427.8 KiB, free 425.9 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 59 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_59_piece0 stored as bytes in memory (estimated size 92.9 KiB, free 426.8 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 59 took 7 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_59 stored as values in memory (estimated size 104.5 KiB, free 426.7 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 34.0 (TID 83). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 34.0 (TID 84). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 34.0 (TID 82). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 85
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 86
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 35.0 (TID 85)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 35.0 (TID 86)
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 87
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 35.0 (TID 87)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 62 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_62_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 429.7 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 62 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_62 stored as values in memory (estimated size 427.8 KiB, free 429.3 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 61 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_61_piece0 stored as bytes in memory (estimated size 92.9 KiB, free 429.2 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 61 took 5 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_61 stored as values in memory (estimated size 104.5 KiB, free 429.1 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 35.0 (TID 87). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 35.0 (TID 85). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 35.0 (TID 86). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 88
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 89
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 90
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 36.0 (TID 88)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 36.0 (TID 90)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 36.0 (TID 89)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 64 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_64_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 429.1 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 64 took 5 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_64 stored as values in memory (estimated size 427.8 KiB, free 428.7 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 63 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_63_piece0 stored as bytes in memory (estimated size 92.9 KiB, free 428.6 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 63 took 6 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_63 stored as values in memory (estimated size 104.5 KiB, free 428.5 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 36.0 (TID 90). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 36.0 (TID 89). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 36.0 (TID 88). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 91
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 92
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 93
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 37.0 (TID 91)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 37.0 (TID 92)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 37.0 (TID 93)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 66 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_66_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 428.5 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 66 took 7 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_66 stored as values in memory (estimated size 427.8 KiB, free 428.1 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 65 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_65_piece0 stored as bytes in memory (estimated size 92.9 KiB, free 428.0 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 65 took 5 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_65 stored as values in memory (estimated size 104.5 KiB, free 427.9 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 37.0 (TID 93). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 37.0 (TID 91). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 37.0 (TID 92). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 94
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 95
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 38.0 (TID 94)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 38.0 (TID 95)
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 96
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 38.0 (TID 96)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 68 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_68_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 427.9 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 68 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_68 stored as values in memory (estimated size 427.8 KiB, free 427.5 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 67 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_67_piece0 stored as bytes in memory (estimated size 92.9 KiB, free 427.4 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 67 took 5 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_67 stored as values in memory (estimated size 104.5 KiB, free 427.3 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 38.0 (TID 95). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 38.0 (TID 94). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 38.0 (TID 96). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 97
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 98
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 99
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 39.0 (TID 97)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 39.0 (TID 98)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 39.0 (TID 99)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 70 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_70_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 427.3 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 70 took 5 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_70 stored as values in memory (estimated size 427.8 KiB, free 426.9 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 69 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_69_piece0 stored as bytes in memory (estimated size 93.0 KiB, free 426.8 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 69 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_69 stored as values in memory (estimated size 104.5 KiB, free 426.7 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 39.0 (TID 97). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 39.0 (TID 99). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 39.0 (TID 98). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 100
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 101
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 102
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 40.0 (TID 100)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 40.0 (TID 102)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 40.0 (TID 101)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 72 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_72_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 426.8 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 72 took 6 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_72 stored as values in memory (estimated size 427.8 KiB, free 426.3 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 71 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_71_piece0 stored as bytes in memory (estimated size 93.0 KiB, free 426.3 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 71 took 5 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_71 stored as values in memory (estimated size 104.5 KiB, free 426.1 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 40.0 (TID 102). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 40.0 (TID 101). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 40.0 (TID 100). 110391 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 103
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 104
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 105
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 41.0 (TID 103)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 41.0 (TID 104)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 41.0 (TID 105)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 74 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_74_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 426.2 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 74 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_74 stored as values in memory (estimated size 427.8 KiB, free 425.8 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 73 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_73_piece0 stored as bytes in memory (estimated size 93.0 KiB, free 425.7 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 73 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_73 stored as values in memory (estimated size 104.5 KiB, free 425.6 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 41.0 (TID 105). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 41.0 (TID 104). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 41.0 (TID 103). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 106
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 107
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 42.0 (TID 106)
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 108
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 42.0 (TID 107)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 42.0 (TID 108)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 76 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_76_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 426.8 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 76 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_76 stored as values in memory (estimated size 427.8 KiB, free 426.9 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 75 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_75_piece0 stored as bytes in memory (estimated size 92.9 KiB, free 428.6 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 75 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_75 stored as values in memory (estimated size 104.5 KiB, free 428.5 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 42.0 (TID 106). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 42.0 (TID 108). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 42.0 (TID 107). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 109
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 110
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 43.0 (TID 109)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 43.0 (TID 110)
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 111
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 43.0 (TID 111)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 78 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_78_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 429.7 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 78 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_78 stored as values in memory (estimated size 427.8 KiB, free 429.3 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 77 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_77_piece0 stored as bytes in memory (estimated size 93.0 KiB, free 429.2 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 77 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_77 stored as values in memory (estimated size 104.5 KiB, free 429.1 MiB)
+25/11/24 21:30:44 INFO Executor: Finished task 1.0 in stage 43.0 (TID 110). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 0.0 in stage 43.0 (TID 109). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO Executor: Finished task 2.0 in stage 43.0 (TID 111). 110348 bytes result sent to driver
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 112
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 113
+25/11/24 21:30:44 INFO CoarseGrainedExecutorBackend: Got assigned task 114
+25/11/24 21:30:44 INFO Executor: Running task 0.0 in stage 44.0 (TID 112)
+25/11/24 21:30:44 INFO Executor: Running task 1.0 in stage 44.0 (TID 113)
+25/11/24 21:30:44 INFO Executor: Running task 2.0 in stage 44.0 (TID 114)
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 80 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_80_piece0 stored as bytes in memory (estimated size 174.2 KiB, free 429.1 MiB)
+25/11/24 21:30:44 INFO TorrentBroadcast: Reading broadcast variable 80 took 4 ms
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_80 stored as values in memory (estimated size 427.8 KiB, free 428.7 MiB)
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_2 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_0 locally
+25/11/24 21:30:44 INFO BlockManager: Found block rdd_66_1 locally
+25/11/24 21:30:44 INFO TorrentBroadcast: Started reading broadcast variable 79 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:44 INFO MemoryStore: Block broadcast_79_piece0 stored as bytes in memory (estimated size 92.9 KiB, free 428.6 MiB)
+25/11/24 21:30:45 INFO TorrentBroadcast: Reading broadcast variable 79 took 4 ms
+25/11/24 21:30:45 INFO MemoryStore: Block broadcast_79 stored as values in memory (estimated size 104.5 KiB, free 428.5 MiB)
+25/11/24 21:30:45 INFO Executor: Finished task 2.0 in stage 44.0 (TID 114). 110348 bytes result sent to driver
+25/11/24 21:30:45 INFO Executor: Finished task 1.0 in stage 44.0 (TID 113). 110348 bytes result sent to driver
+25/11/24 21:30:45 INFO Executor: Finished task 0.0 in stage 44.0 (TID 112). 110348 bytes result sent to driver
+25/11/24 21:30:45 INFO BlockManager: Removing RDD 66
+25/11/24 21:30:45 INFO CoarseGrainedExecutorBackend: Got assigned task 115
+25/11/24 21:30:45 INFO CoarseGrainedExecutorBackend: Got assigned task 116
+25/11/24 21:30:45 INFO CoarseGrainedExecutorBackend: Got assigned task 117
+25/11/24 21:30:45 INFO Executor: Running task 1.0 in stage 45.0 (TID 116)
+25/11/24 21:30:45 INFO Executor: Running task 0.0 in stage 45.0 (TID 115)
+25/11/24 21:30:45 INFO Executor: Running task 2.0 in stage 45.0 (TID 117)
+25/11/24 21:30:45 INFO TorrentBroadcast: Started reading broadcast variable 84 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:45 INFO MemoryStore: Block broadcast_84_piece0 stored as bytes in memory (estimated size 265.1 KiB, free 430.6 MiB)
+25/11/24 21:30:45 INFO TorrentBroadcast: Reading broadcast variable 84 took 6 ms
+25/11/24 21:30:45 INFO MemoryStore: Block broadcast_84 stored as values in memory (estimated size 520.5 KiB, free 430.1 MiB)
+25/11/24 21:30:45 INFO CodeGenerator: Code generated in 23.498671 ms
+25/11/24 21:30:45 INFO CodeGenerator: Code generated in 8.420928 ms
+25/11/24 21:30:45 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 4194304-8388608, partition values: [empty row]
+25/11/24 21:30:45 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 8388608-9634397, partition values: [empty row]
+25/11/24 21:30:45 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 0-4194304, partition values: [empty row]
+25/11/24 21:30:45 INFO TorrentBroadcast: Started reading broadcast variable 83 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:45 INFO MemoryStore: Block broadcast_83_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 429.8 MiB)
+25/11/24 21:30:45 INFO TorrentBroadcast: Reading broadcast variable 83 took 7 ms
+25/11/24 21:30:45 INFO MemoryStore: Block broadcast_83 stored as values in memory (estimated size 370.9 KiB, free 429.5 MiB)
+25/11/24 21:30:45 INFO Executor: Finished task 2.0 in stage 45.0 (TID 117). 2184 bytes result sent to driver
+25/11/24 21:30:45 INFO Executor: Finished task 1.0 in stage 45.0 (TID 116). 2184 bytes result sent to driver
+25/11/24 21:30:45 INFO Executor: Finished task 0.0 in stage 45.0 (TID 115). 2227 bytes result sent to driver
+25/11/24 21:30:45 INFO CoarseGrainedExecutorBackend: Got assigned task 118
+25/11/24 21:30:45 INFO CoarseGrainedExecutorBackend: Got assigned task 119
+25/11/24 21:30:45 INFO Executor: Running task 0.0 in stage 46.0 (TID 118)
+25/11/24 21:30:45 INFO Executor: Running task 1.0 in stage 46.0 (TID 119)
+25/11/24 21:30:45 INFO CoarseGrainedExecutorBackend: Got assigned task 120
+25/11/24 21:30:45 INFO MapOutputTrackerWorker: Updating epoch to 5 and clearing cache
+25/11/24 21:30:45 INFO Executor: Running task 2.0 in stage 46.0 (TID 120)
+25/11/24 21:30:45 INFO TorrentBroadcast: Started reading broadcast variable 85 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:45 INFO MemoryStore: Block broadcast_85_piece0 stored as bytes in memory (estimated size 3.4 KiB, free 429.7 MiB)
+25/11/24 21:30:45 INFO TorrentBroadcast: Reading broadcast variable 85 took 6 ms
+25/11/24 21:30:45 INFO MemoryStore: Block broadcast_85 stored as values in memory (estimated size 6.8 KiB, free 429.7 MiB)
+25/11/24 21:30:45 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 4, fetching them
+25/11/24 21:30:45 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 4, fetching them
+25/11/24 21:30:45 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 4, fetching them
+25/11/24 21:30:45 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@172.23.202.231:35511)
+25/11/24 21:30:45 INFO MapOutputTrackerWorker: Got the map output locations
+25/11/24 21:30:45 INFO ShuffleBlockFetcherIterator: Getting 3 (3.4 KiB) non-empty blocks including 3 (3.4 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:45 INFO ShuffleBlockFetcherIterator: Getting 3 (3.3 KiB) non-empty blocks including 3 (3.3 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:45 INFO ShuffleBlockFetcherIterator: Getting 3 (3.2 KiB) non-empty blocks including 3 (3.2 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:45 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:45 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:45 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:45 INFO Executor: Finished task 0.0 in stage 46.0 (TID 118). 2503 bytes result sent to driver
+25/11/24 21:30:45 INFO Executor: Finished task 1.0 in stage 46.0 (TID 119). 2503 bytes result sent to driver
+25/11/24 21:30:45 INFO Executor: Finished task 2.0 in stage 46.0 (TID 120). 2503 bytes result sent to driver
+25/11/24 21:30:45 INFO CoarseGrainedExecutorBackend: Got assigned task 121
+25/11/24 21:30:45 INFO CoarseGrainedExecutorBackend: Got assigned task 122
+25/11/24 21:30:45 INFO CoarseGrainedExecutorBackend: Got assigned task 123
+25/11/24 21:30:45 INFO Executor: Running task 0.0 in stage 48.0 (TID 121)
+25/11/24 21:30:45 INFO Executor: Running task 1.0 in stage 48.0 (TID 122)
+25/11/24 21:30:45 INFO Executor: Running task 2.0 in stage 48.0 (TID 123)
+25/11/24 21:30:45 INFO TorrentBroadcast: Started reading broadcast variable 86 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:45 INFO MemoryStore: Block broadcast_86_piece0 stored as bytes in memory (estimated size 2.9 KiB, free 429.7 MiB)
+25/11/24 21:30:45 INFO TorrentBroadcast: Reading broadcast variable 86 took 5 ms
+25/11/24 21:30:45 INFO MemoryStore: Block broadcast_86 stored as values in memory (estimated size 5.2 KiB, free 429.7 MiB)
+25/11/24 21:30:45 INFO ShuffleBlockFetcherIterator: Getting 3 (3.4 KiB) non-empty blocks including 3 (3.4 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:45 INFO ShuffleBlockFetcherIterator: Getting 3 (3.2 KiB) non-empty blocks including 3 (3.2 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:45 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:45 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:45 INFO ShuffleBlockFetcherIterator: Getting 3 (3.3 KiB) non-empty blocks including 3 (3.3 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:45 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+25/11/24 21:30:45 INFO Executor: Finished task 2.0 in stage 48.0 (TID 123). 1992 bytes result sent to driver
+25/11/24 21:30:45 INFO Executor: Finished task 1.0 in stage 48.0 (TID 122). 1992 bytes result sent to driver
+25/11/24 21:30:45 INFO Executor: Finished task 0.0 in stage 48.0 (TID 121). 1992 bytes result sent to driver
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 124
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 125
+25/11/24 21:30:46 INFO Executor: Running task 0.0 in stage 49.0 (TID 124)
+25/11/24 21:30:46 INFO Executor: Running task 1.0 in stage 49.0 (TID 125)
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 126
+25/11/24 21:30:46 INFO MapOutputTrackerWorker: Updating epoch to 6 and clearing cache
+25/11/24 21:30:46 INFO Executor: Running task 2.0 in stage 49.0 (TID 126)
+25/11/24 21:30:46 INFO TorrentBroadcast: Started reading broadcast variable 87 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_87_piece0 stored as bytes in memory (estimated size 2.8 KiB, free 429.7 MiB)
+25/11/24 21:30:46 INFO TorrentBroadcast: Reading broadcast variable 87 took 5 ms
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_87 stored as values in memory (estimated size 4.8 KiB, free 429.6 MiB)
+25/11/24 21:30:46 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 5, fetching them
+25/11/24 21:30:46 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 5, fetching them
+25/11/24 21:30:46 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@172.23.202.231:35511)
+25/11/24 21:30:46 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 5, fetching them
+25/11/24 21:30:46 INFO MapOutputTrackerWorker: Got the map output locations
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Getting 3 (3.0 KiB) non-empty blocks including 3 (3.0 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Getting 3 (3.4 KiB) non-empty blocks including 3 (3.4 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Getting 3 (3.3 KiB) non-empty blocks including 3 (3.3 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:46 INFO Executor: Finished task 0.0 in stage 49.0 (TID 124). 1836 bytes result sent to driver
+25/11/24 21:30:46 INFO Executor: Finished task 2.0 in stage 49.0 (TID 126). 1836 bytes result sent to driver
+25/11/24 21:30:46 INFO Executor: Finished task 1.0 in stage 49.0 (TID 125). 1836 bytes result sent to driver
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 127
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 128
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 129
+25/11/24 21:30:46 INFO Executor: Running task 2.0 in stage 52.0 (TID 129)
+25/11/24 21:30:46 INFO Executor: Running task 0.0 in stage 52.0 (TID 127)
+25/11/24 21:30:46 INFO Executor: Running task 1.0 in stage 52.0 (TID 128)
+25/11/24 21:30:46 INFO TorrentBroadcast: Started reading broadcast variable 88 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_88_piece0 stored as bytes in memory (estimated size 3.4 KiB, free 429.6 MiB)
+25/11/24 21:30:46 INFO TorrentBroadcast: Reading broadcast variable 88 took 7 ms
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_88 stored as values in memory (estimated size 6.3 KiB, free 429.6 MiB)
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Getting 3 (3.4 KiB) non-empty blocks including 3 (3.4 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Getting 3 (3.0 KiB) non-empty blocks including 3 (3.0 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Getting 3 (3.3 KiB) non-empty blocks including 3 (3.3 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:46 INFO Executor: Finished task 1.0 in stage 52.0 (TID 128). 1979 bytes result sent to driver
+25/11/24 21:30:46 INFO Executor: Finished task 0.0 in stage 52.0 (TID 127). 1979 bytes result sent to driver
+25/11/24 21:30:46 INFO Executor: Finished task 2.0 in stage 52.0 (TID 129). 1979 bytes result sent to driver
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 130
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 131
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 132
+25/11/24 21:30:46 INFO Executor: Running task 0.0 in stage 55.0 (TID 130)
+25/11/24 21:30:46 INFO Executor: Running task 1.0 in stage 55.0 (TID 131)
+25/11/24 21:30:46 INFO Executor: Running task 2.0 in stage 55.0 (TID 132)
+25/11/24 21:30:46 INFO TorrentBroadcast: Started reading broadcast variable 89 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_89_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 429.6 MiB)
+25/11/24 21:30:46 INFO TorrentBroadcast: Reading broadcast variable 89 took 4 ms
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_89 stored as values in memory (estimated size 8.0 KiB, free 429.6 MiB)
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Getting 3 (3.0 KiB) non-empty blocks including 3 (3.0 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Getting 3 (3.4 KiB) non-empty blocks including 3 (3.4 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Getting 3 (3.3 KiB) non-empty blocks including 3 (3.3 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:46 INFO MemoryStore: Block rdd_124_1 stored as values in memory (estimated size 18.1 KiB, free 429.6 MiB)
+25/11/24 21:30:46 INFO MemoryStore: Block rdd_124_0 stored as values in memory (estimated size 13.9 KiB, free 429.6 MiB)
+25/11/24 21:30:46 INFO MemoryStore: Block rdd_124_2 stored as values in memory (estimated size 15.5 KiB, free 429.6 MiB)
+25/11/24 21:30:46 INFO Executor: Finished task 0.0 in stage 55.0 (TID 130). 2055 bytes result sent to driver
+25/11/24 21:30:46 INFO Executor: Finished task 2.0 in stage 55.0 (TID 132). 2098 bytes result sent to driver
+25/11/24 21:30:46 INFO Executor: Finished task 1.0 in stage 55.0 (TID 131). 2055 bytes result sent to driver
+25/11/24 21:30:46 INFO BlockManager: Removing RDD 124
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 133
+25/11/24 21:30:46 INFO Executor: Running task 0.0 in stage 56.0 (TID 133)
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 134
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 135
+25/11/24 21:30:46 INFO Executor: Running task 1.0 in stage 56.0 (TID 134)
+25/11/24 21:30:46 INFO Executor: Running task 2.0 in stage 56.0 (TID 135)
+25/11/24 21:30:46 INFO TorrentBroadcast: Started reading broadcast variable 91 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_91_piece0 stored as bytes in memory (estimated size 269.5 KiB, free 430.0 MiB)
+25/11/24 21:30:46 INFO TorrentBroadcast: Reading broadcast variable 91 took 5 ms
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_91 stored as values in memory (estimated size 531.4 KiB, free 429.5 MiB)
+25/11/24 21:30:46 INFO BlockManager: Removing RDD 124
+25/11/24 21:30:46 INFO BlockManager: Removing RDD 66
+25/11/24 21:30:46 INFO CodeGenerator: Code generated in 28.223766 ms
+25/11/24 21:30:46 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 8388608-9634397, partition values: [empty row]
+25/11/24 21:30:46 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 4194304-8388608, partition values: [empty row]
+25/11/24 21:30:46 INFO FileScanRDD: Reading File path: file:///home/kalp/spam_project/data/emails.csv, range: 0-4194304, partition values: [empty row]
+25/11/24 21:30:46 INFO TorrentBroadcast: Started reading broadcast variable 90 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_90_piece0 stored as bytes in memory (estimated size 34.3 KiB, free 431.6 MiB)
+25/11/24 21:30:46 INFO TorrentBroadcast: Reading broadcast variable 90 took 7 ms
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_90 stored as values in memory (estimated size 370.9 KiB, free 431.2 MiB)
+25/11/24 21:30:46 INFO Executor: Finished task 2.0 in stage 56.0 (TID 135). 2843 bytes result sent to driver
+25/11/24 21:30:46 INFO Executor: Finished task 1.0 in stage 56.0 (TID 134). 2843 bytes result sent to driver
+25/11/24 21:30:46 INFO Executor: Finished task 0.0 in stage 56.0 (TID 133). 2843 bytes result sent to driver
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 136
+25/11/24 21:30:46 INFO Executor: Running task 0.0 in stage 58.0 (TID 136)
+25/11/24 21:30:46 INFO MapOutputTrackerWorker: Updating epoch to 7 and clearing cache
+25/11/24 21:30:46 INFO TorrentBroadcast: Started reading broadcast variable 92 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_92_piece0 stored as bytes in memory (estimated size 7.3 KiB, free 431.4 MiB)
+25/11/24 21:30:46 INFO TorrentBroadcast: Reading broadcast variable 92 took 3 ms
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_92 stored as values in memory (estimated size 17.7 KiB, free 431.4 MiB)
+25/11/24 21:30:46 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 6, fetching them
+25/11/24 21:30:46 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@172.23.202.231:35511)
+25/11/24 21:30:46 INFO MapOutputTrackerWorker: Got the map output locations
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Getting 3 (186.0 B) non-empty blocks including 3 (186.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:46 INFO CodeGenerator: Code generated in 11.89144 ms
+25/11/24 21:30:46 INFO Executor: Finished task 0.0 in stage 58.0 (TID 136). 4091 bytes result sent to driver
+25/11/24 21:30:46 INFO CoarseGrainedExecutorBackend: Got assigned task 137
+25/11/24 21:30:46 INFO Executor: Running task 0.0 in stage 59.0 (TID 137)
+25/11/24 21:30:46 INFO TorrentBroadcast: Started reading broadcast variable 93 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_93_piece0 stored as bytes in memory (estimated size 36.3 KiB, free 431.4 MiB)
+25/11/24 21:30:46 INFO TorrentBroadcast: Reading broadcast variable 93 took 4 ms
+25/11/24 21:30:46 INFO MemoryStore: Block broadcast_93 stored as values in memory (estimated size 101.3 KiB, free 431.3 MiB)
+25/11/24 21:30:46 INFO HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+25/11/24 21:30:46 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/11/24 21:30:46 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/11/24 21:30:47 INFO FileOutputCommitter: Saved output of task 'attempt_202511242130464329843799255261432_0137_m_000000_0' to file:/home/kalp/spam_project/model_spam/metadata/_temporary/0/task_202511242130464329843799255261432_0137_m_000000
+25/11/24 21:30:47 INFO SparkHadoopMapRedUtil: attempt_202511242130464329843799255261432_0137_m_000000_0: Committed. Elapsed time: 1 ms.
+25/11/24 21:30:47 INFO Executor: Finished task 0.0 in stage 59.0 (TID 137). 1397 bytes result sent to driver
+25/11/24 21:30:47 INFO CoarseGrainedExecutorBackend: Got assigned task 138
+25/11/24 21:30:47 INFO Executor: Running task 0.0 in stage 60.0 (TID 138)
+25/11/24 21:30:47 INFO TorrentBroadcast: Started reading broadcast variable 94 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:47 INFO MemoryStore: Block broadcast_94_piece0 stored as bytes in memory (estimated size 36.4 KiB, free 431.2 MiB)
+25/11/24 21:30:47 INFO TorrentBroadcast: Reading broadcast variable 94 took 4 ms
+25/11/24 21:30:47 INFO MemoryStore: Block broadcast_94 stored as values in memory (estimated size 101.4 KiB, free 431.1 MiB)
+25/11/24 21:30:47 INFO HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+25/11/24 21:30:47 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/11/24 21:30:47 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/11/24 21:30:47 INFO FileOutputCommitter: Saved output of task 'attempt_202511242130478699876909836300232_0139_m_000000_0' to file:/home/kalp/spam_project/model_spam/stages/0_RegexTokenizer_7d161fa4645f/metadata/_temporary/0/task_202511242130478699876909836300232_0139_m_000000
+25/11/24 21:30:47 INFO SparkHadoopMapRedUtil: attempt_202511242130478699876909836300232_0139_m_000000_0: Committed. Elapsed time: 0 ms.
+25/11/24 21:30:47 INFO Executor: Finished task 0.0 in stage 60.0 (TID 138). 1397 bytes result sent to driver
+25/11/24 21:30:47 INFO CoarseGrainedExecutorBackend: Got assigned task 139
+25/11/24 21:30:47 INFO Executor: Running task 0.0 in stage 61.0 (TID 139)
+25/11/24 21:30:47 INFO TorrentBroadcast: Started reading broadcast variable 95 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:47 INFO MemoryStore: Block broadcast_95_piece0 stored as bytes in memory (estimated size 36.4 KiB, free 431.1 MiB)
+25/11/24 21:30:47 INFO TorrentBroadcast: Reading broadcast variable 95 took 3 ms
+25/11/24 21:30:47 INFO MemoryStore: Block broadcast_95 stored as values in memory (estimated size 101.4 KiB, free 431.0 MiB)
+25/11/24 21:30:47 INFO HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+25/11/24 21:30:47 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/11/24 21:30:47 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/11/24 21:30:47 INFO FileOutputCommitter: Saved output of task 'attempt_202511242130474168012101097766077_0141_m_000000_0' to file:/home/kalp/spam_project/model_spam/stages/1_StopWordsRemover_b0a7b0c693db/metadata/_temporary/0/task_202511242130474168012101097766077_0141_m_000000
+25/11/24 21:30:47 INFO SparkHadoopMapRedUtil: attempt_202511242130474168012101097766077_0141_m_000000_0: Committed. Elapsed time: 0 ms.
+25/11/24 21:30:47 INFO Executor: Finished task 0.0 in stage 61.0 (TID 139). 1354 bytes result sent to driver
+25/11/24 21:30:47 INFO CoarseGrainedExecutorBackend: Got assigned task 140
+25/11/24 21:30:47 INFO Executor: Running task 0.0 in stage 62.0 (TID 140)
+25/11/24 21:30:47 INFO TorrentBroadcast: Started reading broadcast variable 96 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:47 INFO MemoryStore: Block broadcast_96_piece0 stored as bytes in memory (estimated size 36.4 KiB, free 431.0 MiB)
+25/11/24 21:30:47 INFO TorrentBroadcast: Reading broadcast variable 96 took 3 ms
+25/11/24 21:30:47 INFO MemoryStore: Block broadcast_96 stored as values in memory (estimated size 101.4 KiB, free 430.9 MiB)
+25/11/24 21:30:47 INFO HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+25/11/24 21:30:47 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/11/24 21:30:47 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/11/24 21:30:47 INFO FileOutputCommitter: Saved output of task 'attempt_202511242130478230035585564873626_0143_m_000000_0' to file:/home/kalp/spam_project/model_spam/stages/2_CountVectorizer_e66cd7c0119a/metadata/_temporary/0/task_202511242130478230035585564873626_0143_m_000000
+25/11/24 21:30:47 INFO SparkHadoopMapRedUtil: attempt_202511242130478230035585564873626_0143_m_000000_0: Committed. Elapsed time: 0 ms.
+25/11/24 21:30:47 INFO Executor: Finished task 0.0 in stage 62.0 (TID 140). 1354 bytes result sent to driver
+25/11/24 21:30:47 INFO CoarseGrainedExecutorBackend: Got assigned task 141
+25/11/24 21:30:47 INFO Executor: Running task 0.0 in stage 63.0 (TID 141)
+25/11/24 21:30:47 INFO TorrentBroadcast: Started reading broadcast variable 97 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:47 INFO MemoryStore: Block broadcast_97_piece0 stored as bytes in memory (estimated size 4.4 KiB, free 430.9 MiB)
+25/11/24 21:30:47 INFO TorrentBroadcast: Reading broadcast variable 97 took 3 ms
+25/11/24 21:30:47 INFO MemoryStore: Block broadcast_97 stored as values in memory (estimated size 8.4 KiB, free 430.8 MiB)
+25/11/24 21:30:47 INFO Executor: Finished task 0.0 in stage 63.0 (TID 141). 1715 bytes result sent to driver
+25/11/24 21:30:47 INFO CoarseGrainedExecutorBackend: Got assigned task 142
+25/11/24 21:30:47 INFO Executor: Running task 0.0 in stage 65.0 (TID 142)
+25/11/24 21:30:47 INFO MapOutputTrackerWorker: Updating epoch to 8 and clearing cache
+25/11/24 21:30:47 INFO TorrentBroadcast: Started reading broadcast variable 98 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:47 INFO MemoryStore: Block broadcast_98_piece0 stored as bytes in memory (estimated size 75.5 KiB, free 430.8 MiB)
+25/11/24 21:30:47 INFO TorrentBroadcast: Reading broadcast variable 98 took 5 ms
+25/11/24 21:30:47 INFO MemoryStore: Block broadcast_98 stored as values in memory (estimated size 210.3 KiB, free 430.6 MiB)
+25/11/24 21:30:47 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 7, fetching them
+25/11/24 21:30:47 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@172.23.202.231:35511)
+25/11/24 21:30:47 INFO MapOutputTrackerWorker: Got the map output locations
+25/11/24 21:30:47 INFO ShuffleBlockFetcherIterator: Getting 1 (160.4 KiB) non-empty blocks including 1 (160.4 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:47 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/11/24 21:30:47 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/11/24 21:30:47 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+25/11/24 21:30:47 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/11/24 21:30:47 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/11/24 21:30:47 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+25/11/24 21:30:47 INFO CodecConfig: Compression: SNAPPY
+25/11/24 21:30:47 INFO CodecConfig: Compression: SNAPPY
+25/11/24 21:30:47 INFO ParquetOutputFormat: ParquetRecordWriter [block size: 134217728b, row group padding size: 8388608b, validating: false]
+25/11/24 21:30:47 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "vocabulary",
+    "type" : {
+      "type" : "array",
+      "elementType" : "string",
+      "containsNull" : true
+    },
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional group vocabulary (LIST) {
+    repeated group list {
+      optional binary element (STRING);
+    }
+  }
+}
+
+       
+25/11/24 21:30:47 INFO CodecPool: Got brand-new compressor [.snappy]
+25/11/24 21:30:48 INFO FileOutputCommitter: Saved output of task 'attempt_202511242130471002279501711870450_0065_m_000000_142' to file:/home/kalp/spam_project/model_spam/stages/2_CountVectorizer_e66cd7c0119a/data/_temporary/0/task_202511242130471002279501711870450_0065_m_000000
+25/11/24 21:30:48 INFO SparkHadoopMapRedUtil: attempt_202511242130471002279501711870450_0065_m_000000_142: Committed. Elapsed time: 0 ms.
+25/11/24 21:30:48 INFO Executor: Finished task 0.0 in stage 65.0 (TID 142). 4998 bytes result sent to driver
+25/11/24 21:30:48 INFO CoarseGrainedExecutorBackend: Got assigned task 143
+25/11/24 21:30:48 INFO Executor: Running task 0.0 in stage 66.0 (TID 143)
+25/11/24 21:30:48 INFO TorrentBroadcast: Started reading broadcast variable 99 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:48 INFO MemoryStore: Block broadcast_99_piece0 stored as bytes in memory (estimated size 36.4 KiB, free 430.5 MiB)
+25/11/24 21:30:48 INFO TorrentBroadcast: Reading broadcast variable 99 took 3 ms
+25/11/24 21:30:48 INFO MemoryStore: Block broadcast_99 stored as values in memory (estimated size 101.3 KiB, free 430.4 MiB)
+25/11/24 21:30:48 INFO HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+25/11/24 21:30:48 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/11/24 21:30:48 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/11/24 21:30:48 INFO FileOutputCommitter: Saved output of task 'attempt_202511242130482968916150829745959_0150_m_000000_0' to file:/home/kalp/spam_project/model_spam/stages/3_IDF_b3e1240bc088/metadata/_temporary/0/task_202511242130482968916150829745959_0150_m_000000
+25/11/24 21:30:48 INFO SparkHadoopMapRedUtil: attempt_202511242130482968916150829745959_0150_m_000000_0: Committed. Elapsed time: 0 ms.
+25/11/24 21:30:48 INFO Executor: Finished task 0.0 in stage 66.0 (TID 143). 1354 bytes result sent to driver
+25/11/24 21:30:48 INFO CoarseGrainedExecutorBackend: Got assigned task 144
+25/11/24 21:30:48 INFO Executor: Running task 0.0 in stage 67.0 (TID 144)
+25/11/24 21:30:48 INFO TorrentBroadcast: Started reading broadcast variable 100 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:48 INFO MemoryStore: Block broadcast_100_piece0 stored as bytes in memory (estimated size 4.9 KiB, free 430.4 MiB)
+25/11/24 21:30:48 INFO TorrentBroadcast: Reading broadcast variable 100 took 3 ms
+25/11/24 21:30:48 INFO MemoryStore: Block broadcast_100 stored as values in memory (estimated size 9.3 KiB, free 430.4 MiB)
+25/11/24 21:30:48 INFO Executor: Finished task 0.0 in stage 67.0 (TID 144). 1715 bytes result sent to driver
+25/11/24 21:30:48 INFO CoarseGrainedExecutorBackend: Got assigned task 145
+25/11/24 21:30:48 INFO Executor: Running task 0.0 in stage 69.0 (TID 145)
+25/11/24 21:30:48 INFO MapOutputTrackerWorker: Updating epoch to 9 and clearing cache
+25/11/24 21:30:48 INFO TorrentBroadcast: Started reading broadcast variable 101 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:48 INFO MemoryStore: Block broadcast_101_piece0 stored as bytes in memory (estimated size 76.3 KiB, free 430.3 MiB)
+25/11/24 21:30:48 INFO TorrentBroadcast: Reading broadcast variable 101 took 4 ms
+25/11/24 21:30:48 INFO MemoryStore: Block broadcast_101 stored as values in memory (estimated size 211.8 KiB, free 430.1 MiB)
+25/11/24 21:30:48 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 8, fetching them
+25/11/24 21:30:48 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@172.23.202.231:35511)
+25/11/24 21:30:48 INFO MapOutputTrackerWorker: Got the map output locations
+25/11/24 21:30:48 INFO ShuffleBlockFetcherIterator: Getting 1 (46.5 KiB) non-empty blocks including 1 (46.5 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:48 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:48 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/11/24 21:30:48 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/11/24 21:30:48 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+25/11/24 21:30:48 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/11/24 21:30:48 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/11/24 21:30:48 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+25/11/24 21:30:48 INFO CodecConfig: Compression: SNAPPY
+25/11/24 21:30:48 INFO CodecConfig: Compression: SNAPPY
+25/11/24 21:30:48 INFO ParquetOutputFormat: ParquetRecordWriter [block size: 134217728b, row group padding size: 8388608b, validating: false]
+25/11/24 21:30:48 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "idf",
+    "type" : {
+      "type" : "udt",
+      "class" : "org.apache.spark.ml.linalg.VectorUDT",
+      "pyClass" : "pyspark.ml.linalg.VectorUDT",
+      "sqlType" : {
+        "type" : "struct",
+        "fields" : [ {
+          "name" : "type",
+          "type" : "byte",
+          "nullable" : false,
+          "metadata" : { }
+        }, {
+          "name" : "size",
+          "type" : "integer",
+          "nullable" : true,
+          "metadata" : { }
+        }, {
+          "name" : "indices",
+          "type" : {
+            "type" : "array",
+            "elementType" : "integer",
+            "containsNull" : false
+          },
+          "nullable" : true,
+          "metadata" : { }
+        }, {
+          "name" : "values",
+          "type" : {
+            "type" : "array",
+            "elementType" : "double",
+            "containsNull" : false
+          },
+          "nullable" : true,
+          "metadata" : { }
+        } ]
+      }
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "docFreq",
+    "type" : {
+      "type" : "array",
+      "elementType" : "long",
+      "containsNull" : false
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "numDocs",
+    "type" : "long",
+    "nullable" : false,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional group idf {
+    required int32 type (INTEGER(8,true));
+    optional int32 size;
+    optional group indices (LIST) {
+      repeated group list {
+        required int32 element;
+      }
+    }
+    optional group values (LIST) {
+      repeated group list {
+        required double element;
+      }
+    }
+  }
+  optional group docFreq (LIST) {
+    repeated group list {
+      required int64 element;
+    }
+  }
+  required int64 numDocs;
+}
+
+       
+25/11/24 21:30:48 INFO FileOutputCommitter: Saved output of task 'attempt_202511242130486373854558379881315_0069_m_000000_145' to file:/home/kalp/spam_project/model_spam/stages/3_IDF_b3e1240bc088/data/_temporary/0/task_202511242130486373854558379881315_0069_m_000000
+25/11/24 21:30:48 INFO SparkHadoopMapRedUtil: attempt_202511242130486373854558379881315_0069_m_000000_145: Committed. Elapsed time: 1 ms.
+25/11/24 21:30:48 INFO Executor: Finished task 0.0 in stage 69.0 (TID 145). 4998 bytes result sent to driver
+25/11/24 21:30:48 INFO CoarseGrainedExecutorBackend: Got assigned task 146
+25/11/24 21:30:48 INFO Executor: Running task 0.0 in stage 70.0 (TID 146)
+25/11/24 21:30:48 INFO TorrentBroadcast: Started reading broadcast variable 102 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:48 INFO MemoryStore: Block broadcast_102_piece0 stored as bytes in memory (estimated size 36.4 KiB, free 430.1 MiB)
+25/11/24 21:30:48 INFO TorrentBroadcast: Reading broadcast variable 102 took 7 ms
+25/11/24 21:30:48 INFO MemoryStore: Block broadcast_102 stored as values in memory (estimated size 101.4 KiB, free 430.0 MiB)
+25/11/24 21:30:48 INFO HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+25/11/24 21:30:48 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/11/24 21:30:48 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/11/24 21:30:48 INFO FileOutputCommitter: Saved output of task 'attempt_202511242130484831545986183414129_0157_m_000000_0' to file:/home/kalp/spam_project/model_spam/stages/4_LogisticRegression_6bd42d7a6d2a/metadata/_temporary/0/task_202511242130484831545986183414129_0157_m_000000
+25/11/24 21:30:48 INFO SparkHadoopMapRedUtil: attempt_202511242130484831545986183414129_0157_m_000000_0: Committed. Elapsed time: 0 ms.
+25/11/24 21:30:48 INFO Executor: Finished task 0.0 in stage 70.0 (TID 146). 1354 bytes result sent to driver
+25/11/24 21:30:48 INFO CoarseGrainedExecutorBackend: Got assigned task 147
+25/11/24 21:30:48 INFO Executor: Running task 0.0 in stage 71.0 (TID 147)
+25/11/24 21:30:48 INFO TorrentBroadcast: Started reading broadcast variable 103 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:48 INFO MemoryStore: Block broadcast_103_piece0 stored as bytes in memory (estimated size 5.0 KiB, free 430.0 MiB)
+25/11/24 21:30:48 INFO TorrentBroadcast: Reading broadcast variable 103 took 4 ms
+25/11/24 21:30:48 INFO MemoryStore: Block broadcast_103 stored as values in memory (estimated size 9.5 KiB, free 430.0 MiB)
+25/11/24 21:30:48 INFO Executor: Finished task 0.0 in stage 71.0 (TID 147). 1715 bytes result sent to driver
+25/11/24 21:30:48 INFO CoarseGrainedExecutorBackend: Got assigned task 148
+25/11/24 21:30:48 INFO Executor: Running task 0.0 in stage 73.0 (TID 148)
+25/11/24 21:30:48 INFO MapOutputTrackerWorker: Updating epoch to 10 and clearing cache
+25/11/24 21:30:48 INFO TorrentBroadcast: Started reading broadcast variable 104 with 1 pieces (estimated total size 4.0 MiB)
+25/11/24 21:30:48 INFO MemoryStore: Block broadcast_104_piece0 stored as bytes in memory (estimated size 76.5 KiB, free 429.9 MiB)
+25/11/24 21:30:48 INFO TorrentBroadcast: Reading broadcast variable 104 took 6 ms
+25/11/24 21:30:48 INFO MemoryStore: Block broadcast_104 stored as values in memory (estimated size 212.9 KiB, free 429.7 MiB)
+25/11/24 21:30:48 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 9, fetching them
+25/11/24 21:30:48 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@172.23.202.231:35511)
+25/11/24 21:30:48 INFO MapOutputTrackerWorker: Got the map output locations
+25/11/24 21:30:48 INFO ShuffleBlockFetcherIterator: Getting 1 (99.6 KiB) non-empty blocks including 1 (99.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/11/24 21:30:48 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+25/11/24 21:30:48 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/11/24 21:30:48 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/11/24 21:30:48 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+25/11/24 21:30:48 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/11/24 21:30:48 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/11/24 21:30:48 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+25/11/24 21:30:48 INFO CodecConfig: Compression: SNAPPY
+25/11/24 21:30:48 INFO CodecConfig: Compression: SNAPPY
+25/11/24 21:30:48 INFO ParquetOutputFormat: ParquetRecordWriter [block size: 134217728b, row group padding size: 8388608b, validating: false]
+25/11/24 21:30:48 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "numClasses",
+    "type" : "integer",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "numFeatures",
+    "type" : "integer",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "interceptVector",
+    "type" : {
+      "type" : "udt",
+      "class" : "org.apache.spark.ml.linalg.VectorUDT",
+      "pyClass" : "pyspark.ml.linalg.VectorUDT",
+      "sqlType" : {
+        "type" : "struct",
+        "fields" : [ {
+          "name" : "type",
+          "type" : "byte",
+          "nullable" : false,
+          "metadata" : { }
+        }, {
+          "name" : "size",
+          "type" : "integer",
+          "nullable" : true,
+          "metadata" : { }
+        }, {
+          "name" : "indices",
+          "type" : {
+            "type" : "array",
+            "elementType" : "integer",
+            "containsNull" : false
+          },
+          "nullable" : true,
+          "metadata" : { }
+        }, {
+          "name" : "values",
+          "type" : {
+            "type" : "array",
+            "elementType" : "double",
+            "containsNull" : false
+          },
+          "nullable" : true,
+          "metadata" : { }
+        } ]
+      }
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "coefficientMatrix",
+    "type" : {
+      "type" : "udt",
+      "class" : "org.apache.spark.ml.linalg.MatrixUDT",
+      "pyClass" : "pyspark.ml.linalg.MatrixUDT",
+      "sqlType" : {
+        "type" : "struct",
+        "fields" : [ {
+          "name" : "type",
+          "type" : "byte",
+          "nullable" : false,
+          "metadata" : { }
+        }, {
+          "name" : "numRows",
+          "type" : "integer",
+          "nullable" : false,
+          "metadata" : { }
+        }, {
+          "name" : "numCols",
+          "type" : "integer",
+          "nullable" : false,
+          "metadata" : { }
+        }, {
+          "name" : "colPtrs",
+          "type" : {
+            "type" : "array",
+            "elementType" : "integer",
+            "containsNull" : false
+          },
+          "nullable" : true,
+          "metadata" : { }
+        }, {
+          "name" : "rowIndices",
+          "type" : {
+            "type" : "array",
+            "elementType" : "integer",
+            "containsNull" : false
+          },
+          "nullable" : true,
+          "metadata" : { }
+        }, {
+          "name" : "values",
+          "type" : {
+            "type" : "array",
+            "elementType" : "double",
+            "containsNull" : false
+          },
+          "nullable" : true,
+          "metadata" : { }
+        }, {
+          "name" : "isTransposed",
+          "type" : "boolean",
+          "nullable" : false,
+          "metadata" : { }
+        } ]
+      }
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "isMultinomial",
+    "type" : "boolean",
+    "nullable" : false,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  required int32 numClasses;
+  required int32 numFeatures;
+  optional group interceptVector {
+    required int32 type (INTEGER(8,true));
+    optional int32 size;
+    optional group indices (LIST) {
+      repeated group list {
+        required int32 element;
+      }
+    }
+    optional group values (LIST) {
+      repeated group list {
+        required double element;
+      }
+    }
+  }
+  optional group coefficientMatrix {
+    required int32 type (INTEGER(8,true));
+    required int32 numRows;
+    required int32 numCols;
+    optional group colPtrs (LIST) {
+      repeated group list {
+        required int32 element;
+      }
+    }
+    optional group rowIndices (LIST) {
+      repeated group list {
+        required int32 element;
+      }
+    }
+    optional group values (LIST) {
+      repeated group list {
+        required double element;
+      }
+    }
+    required boolean isTransposed;
+  }
+  required boolean isMultinomial;
+}
+
+       
+25/11/24 21:30:48 INFO FileOutputCommitter: Saved output of task 'attempt_202511242130485977162604616116451_0073_m_000000_148' to file:/home/kalp/spam_project/model_spam/stages/4_LogisticRegression_6bd42d7a6d2a/data/_temporary/0/task_202511242130485977162604616116451_0073_m_000000
+25/11/24 21:30:48 INFO SparkHadoopMapRedUtil: attempt_202511242130485977162604616116451_0073_m_000000_148: Committed. Elapsed time: 1 ms.
+25/11/24 21:30:48 INFO Executor: Finished task 0.0 in stage 73.0 (TID 148). 4998 bytes result sent to driver
+25/11/24 21:30:48 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+25/11/24 21:30:48 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown

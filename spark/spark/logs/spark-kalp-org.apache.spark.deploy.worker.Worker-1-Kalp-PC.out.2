@@ -1,0 +1,34 @@
+Spark Command: /usr/lib/jvm/java-17-openjdk-amd64/bin/java -cp /home/kalp/spark/spark/conf/:/home/kalp/spark/spark/jars/* -Xmx1g org.apache.spark.deploy.worker.Worker --webui-port 18080 --port 18081 spark://172.23.202.231:7077
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/11/25 06:42:08 INFO Worker: Started daemon with process name: 74435@Kalp-PC
+25/11/25 06:42:08 INFO SignalUtils: Registering signal handler for TERM
+25/11/25 06:42:08 INFO SignalUtils: Registering signal handler for HUP
+25/11/25 06:42:08 INFO SignalUtils: Registering signal handler for INT
+25/11/25 06:42:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/11/25 06:42:08 INFO SecurityManager: Changing view acls to: kalp
+25/11/25 06:42:08 INFO SecurityManager: Changing modify acls to: kalp
+25/11/25 06:42:08 INFO SecurityManager: Changing view acls groups to: 
+25/11/25 06:42:08 INFO SecurityManager: Changing modify acls groups to: 
+25/11/25 06:42:08 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: kalp; groups with view permissions: EMPTY; users with modify permissions: kalp; groups with modify permissions: EMPTY
+25/11/25 06:42:09 INFO Utils: Successfully started service 'sparkWorker' on port 18081.
+25/11/25 06:42:09 INFO Worker: Worker decommissioning not enabled.
+25/11/25 06:42:09 INFO Worker: Starting Spark worker 172.23.202.231:18081 with 4 cores, 4.0 GiB RAM
+25/11/25 06:42:09 INFO Worker: Running Spark version 3.5.7
+25/11/25 06:42:09 INFO Worker: Spark home: /home/kalp/spark/spark
+25/11/25 06:42:09 INFO ResourceUtils: ==============================================================
+25/11/25 06:42:09 INFO ResourceUtils: No custom resources configured for spark.worker.
+25/11/25 06:42:09 INFO ResourceUtils: ==============================================================
+25/11/25 06:42:09 INFO JettyUtils: Start Jetty 172.23.202.231:18080 for WorkerUI
+25/11/25 06:42:09 INFO Utils: Successfully started service 'WorkerUI' on port 18080.
+25/11/25 06:42:09 INFO WorkerWebUI: Bound WorkerWebUI to 172.23.202.231, and started at http://172.23.202.231:18080
+25/11/25 06:42:09 INFO Worker: Connecting to master 172.23.202.231:7077...
+25/11/25 06:42:09 INFO TransportClientFactory: Successfully created connection to /172.23.202.231:7077 after 41 ms (0 ms spent in bootstraps)
+25/11/25 06:42:10 INFO Worker: Successfully registered with master spark://172.23.202.231:7077
+25/11/25 06:42:10 INFO Worker: Asked to launch executor app-20251124231341-0005/5 for SpamPredictionAPI
+25/11/25 06:42:10 INFO SecurityManager: Changing view acls to: kalp
+25/11/25 06:42:10 INFO SecurityManager: Changing modify acls to: kalp
+25/11/25 06:42:10 INFO SecurityManager: Changing view acls groups to: 
+25/11/25 06:42:10 INFO SecurityManager: Changing modify acls groups to: 
+25/11/25 06:42:10 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: kalp; groups with view permissions: EMPTY; users with modify permissions: kalp; groups with modify permissions: EMPTY
+25/11/25 06:42:10 INFO ExecutorRunner: Launch command: "/usr/lib/jvm/java-17-openjdk-amd64/bin/java" "-cp" "/home/kalp/spark/spark/conf/:/home/kalp/spark/spark/jars/*" "-Xmx1024M" "-Dspark.driver.port=40711" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@172.23.202.231:40711" "--executor-id" "5" "--hostname" "172.23.202.231" "--cores" "4" "--app-id" "app-20251124231341-0005" "--worker-url" "spark://Worker@172.23.202.231:18081" "--resourceProfileId" "0"
