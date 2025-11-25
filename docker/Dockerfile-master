@@ -1,0 +1,29 @@
+# Use an official openjdk runtime as a parent image
+FROM openjdk:11
+
+# Install wget and curl (if needed)
+RUN apt-get update && apt-get install -y wget curl net-tools
+
+# Set environment variables
+ENV SPARK_VERSION=3.3.1
+ENV HADOOP_VERSION=3
+ENV SPARK_HOME=/spark
+
+# Download and extract Spark
+RUN wget https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz && \
+    tar xvf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz && \
+    mv spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} ${SPARK_HOME} && \
+    rm spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
+
+# Set working directory
+WORKDIR ${SPARK_HOME}
+
+# Expose Spark master Web UI and master ports
+EXPOSE 8080 7077 6066
+
+# Copy start-master script
+COPY start-master.sh /start-master.sh
+RUN chmod +x /start-master.sh
+
+# Default command to run Spark master
+CMD ["/start-master.sh"]

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spam Classifier UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      max-width: 600px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      font-size: 16px;
+      padding: 8px;
+      margin-bottom: 20px;
+    }
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Spam Classifier</h1>
+  <p>Enter text to classify as spam or not spam:</p>
+  <textarea id="inputText" placeholder="Enter your message here..."></textarea>
+  <br />
+  <button onclick="classifyText()">Classify</button>
+  <div id="result"></div>
+
+  <script>
+    async function classifyText() {
+      const text = document.getElementById('inputText').value.trim();
+      if (!text) {
+        alert('Please enter some text');
+        return;
+      }
+
+      // Placeholder for calling backend API
+      // For now, simulate with a dummy response
+      // TODO: Replace with actual call to Spark backend REST API
+
+      document.getElementById('result').innerText = 'Classifying...';
+
+      try {
+        // Example: Send text to backend and get prediction
+        // const response = await fetch('http://localhost:5000/predict', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify({ text })
+        // });
+        // const data = await response.json();
+        // document.getElementById('result').innerText = `Prediction: ${data.prediction}`;
+
+        // Temporary simulation
+        const keywords = ['free', 'win', 'prize', 'call now', 'selected', 'cheap', 'congratulations'];
+        const lowerText = text.toLowerCase();
+        const isSpam = keywords.some(keyword => lowerText.includes(keyword));
+        document.getElementById('result').innerText = isSpam ? 'Prediction: Spam' : 'Prediction: Not Spam';
+
+      } catch (error) {
+        document.getElementById('result').innerText = 'Error during classification.';
+        console.error(error);
+      }
+    }
+  </script>
+</body>
+</html>
