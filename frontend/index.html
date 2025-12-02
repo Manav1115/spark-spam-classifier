@@ -1,19 +1,405 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Distributed Sentiment Analyzer</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .input-section {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 150px;
+            transition: all 0.3s ease;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea::placeholder {
+            color: #aaa;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        button {
+            flex: 1;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .analyze-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .analyze-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .clear-btn {
+            background: #f0f0f0;
+            color: #666;
+        }
+
+        .clear-btn:hover {
+            background: #e0e0e0;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .result-section {
+            display: none;
+            padding: 25px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-section.show {
+            display: block;
+        }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .result-title {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .sentiment-badge {
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .sentiment-positive {
+            background: #10b981;
+            color: white;
+        }
+
+        .sentiment-negative {
+            background: #ef4444;
+            color: white;
+        }
+
+        .sentiment-neutral {
+            background: #6b7280;
+            color: white;
+        }
+
+        .score-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .score-value {
+            font-weight: bold;
+            font-size: 24px;
+            color: #667eea;
+        }
+
+        .loading {
+            text-align: center;
+            color: #667eea;
+            font-weight: 600;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            background: #fee;
+            border: 2px solid #fcc;
+            color: #c33;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+            margin-top: 15px;
+        }
+
+        .error.show {
+            display: block;
+            animation: slideIn 0.4s ease;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .button-container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<h1>Distributed Sentiment Analysis (Spark)</h1>
+<div class="container">
+    <h1>🎯 Sentiment Analyzer</h1>
+    <p class="subtitle">Powered by Apache Spark - Distributed Computing</p>
 
-<textarea id="text" placeholder="Enter text here..."></textarea>
+    <div class="input-section">
+        <label for="text">Enter your text for analysis:</label>
+        <textarea 
+            id="text" 
+            placeholder="Type or paste your text here... (e.g., 'I love this product! It's amazing and exceeded my expectations.')">
+        </textarea>
+    </div>
 
-<button type="button" onclick="analyze()">Analyze</button>
+    <div class="button-container">
+        <button class="analyze-btn" onclick="analyze()">
+            Analyze Sentiment
+        </button>
+        <button class="clear-btn" onclick="clearAll()">
+            Clear
+        </button>
+    </div>
 
-<h2 id="result"></h2>
+    <div id="loading" class="loading" style="display: none;">
+        <div class="spinner"></div>
+        Processing your text...
+    </div>
 
-<script src="script.js"></script>
+    <div id="result" class="result-section">
+        <div class="result-header">
+            <div class="result-title">Analysis Result</div>
+            <div id="sentimentBadge" class="sentiment-badge"></div>
+        </div>
+        <div class="score-container">
+            <span>Confidence Score:</span>
+            <span id="scoreValue" class="score-value"></span>
+        </div>
+    </div>
+
+    <div id="error" class="error"></div>
+</div>
+
+<script>
+async function analyze() {
+    const text = document.getElementById("text").value.trim();
+    const resultDiv = document.getElementById("result");
+    const loadingDiv = document.getElementById("loading");
+    const errorDiv = document.getElementById("error");
+    const analyzeBtn = document.querySelector(".analyze-btn");
+
+    // Reset states
+    resultDiv.classList.remove("show");
+    errorDiv.classList.remove("show");
+
+    // Validation
+    if (!text) {
+        showError("Please enter some text to analyze.");
+        return;
+    }
+
+    // Show loading
+    loadingDiv.style.display = "block";
+    analyzeBtn.disabled = true;
+
+
+    try {
+        const response = await fetch("http://10.198.228.48:5000/analyze", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text: text })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Server error: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        // Hide loading
+        loadingDiv.style.display = "none";
+        analyzeBtn.disabled = false;
+
+        // Display result
+        displayResult(data.sentiment, data.score);
+    } catch (err) {
+        loadingDiv.style.display = "none";
+        analyzeBtn.disabled = false;
+        showError(`Error: ${err.message}. Please check if the server is running.`);
+    }
+}
+
+function displayResult(sentiment, score) {
+    const resultDiv = document.getElementById("result");
+    const sentimentBadge = document.getElementById("sentimentBadge");
+    const scoreValue = document.getElementById("scoreValue");
+
+    // Determine sentiment class
+    let sentimentClass = "sentiment-neutral";
+    let sentimentText = sentiment;
+
+    if (sentiment.toLowerCase().includes("positive")) {
+        sentimentClass = "sentiment-positive";
+        sentimentText = "😊 " + sentiment;
+    } else if (sentiment.toLowerCase().includes("negative")) {
+        sentimentClass = "sentiment-negative";
+        sentimentText = "😞 " + sentiment;
+    } else {
+        sentimentText = "😐 " + sentiment;
+    }
+
+    // Update badge
+    sentimentBadge.className = `sentiment-badge ${sentimentClass}`;
+    sentimentBadge.textContent = sentimentText;
+
+    // Update score
+    scoreValue.textContent = typeof score === 'number' ? score.toFixed(4) : score;
+
+    // Show result
+    resultDiv.classList.add("show");
+}
+
+function showError(message) {
+    const errorDiv = document.getElementById("error");
+    errorDiv.textContent = message;
+    errorDiv.classList.add("show");
+}
+
+function clearAll() {
+    document.getElementById("text").value = "";
+    document.getElementById("result").classList.remove("show");
+    document.getElementById("error").classList.remove("show");
+    document.getElementById("loading").style.display = "none";
+}
+
+// Allow Enter + Ctrl/Cmd to submit
+document.getElementById("text").addEventListener("keydown", function(e) {
+    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+        analyze();
+    }
+});
+</script>
+
 </body>
 </html>
