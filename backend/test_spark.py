@@ -1,9 +1,13 @@
-from pyspark.sql import SparkSession
+import os
+import sys
 
-spark = SparkSession.builder.getOrCreate()
+# Set Python executable path for Spark workers
+os.environ['PYSPARK_PYTHON'] = sys.executable
+os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
 
-# Simple test: create a range and collect
-data = spark.range(5).collect()
-print("Data from Spark:", data)
+from pyspark import SparkContext
 
-spark.stop()
+sc = SparkContext("local[4]", "test")
+rdd = sc.parallelize([1, 2, 3, 4, 5])
+print(rdd.map(lambda x: x*x).collect())
+sc.stop()
